@@ -12,14 +12,14 @@ class LoginPage extends React.Component {
     return (
       <div>
         <h1>Find A Job!</h1>
-        <p>Email: 
-          <TextField
+        <p>Email:
+          <TextField style={style}
             hintText="Must use ACC email"
           />
         </p>
         <br />
-        <p>Password: 
-          <TextField
+        <p>Password:
+          <TextField style={style}
             hintText="Enter password here"
           />
         </p>
