@@ -14,6 +14,8 @@ import JobPostedPage from './components/JobPostedPage';
 import EmpCreatePostPage from './components/EmpCreatePostPage';
 import EmpEditPostPage from './components/EmpEditPostPage';
 import EditEmployerAcctPage from './components/EditEmployerAcctPage';
+import Footer from './components/Footer';
+
 // test imports
 
 class App extends Component {
@@ -23,7 +25,9 @@ class App extends Component {
         <MuiThemeProvider>
 
           <LoginPage />
-          <EditEmployerAcctPage />
+          <EmployerSignupPage />
+          
+          <Footer />
           
         </MuiThemeProvider>
       </div>
