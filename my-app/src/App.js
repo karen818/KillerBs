@@ -7,7 +7,6 @@ import './App.css';
 import LoginPage from './components/LoginPage';
 import StudentSignupPage from './components/StudentSignupPage';
 import EmployerSignupPage from './components/EmployerSignupPage';
-import StudentDashboardPage from './components/StudentDashboardPage';
 import EmployerDashboardPage from './components/EmployerDashboardPage';
 import EditStudentAcctPage from './components/EditStudentAcctPage';
 import JobPostedPage from './components/JobPostedPage';

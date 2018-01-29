@@ -20,8 +20,9 @@ class EmployerSignupPage extends React.Component {
       				<ContentAdd />
     				</FloatingActionButton>
     			</p>
-        	<p>Name: <TextField hintText="e.g. Hacker Bandits"/></p>
-        	
+        	<p>First Name: <TextField hintText="First name"/></p>
+          <p>Last Name: <TextField hintText="Last name"/></p>
+        	<p>Company Name: <TextField hintText="Enter company name"/></p>
         	<p>Email: <TextField hintText="Must use ACC email"/></p>
         	<p>Password: <TextField hintText="Password requirements go here"/></p>
         	<p>Re-type password: <TextField hintText="Re-enter password for veriication"/></p>
