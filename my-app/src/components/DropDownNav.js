@@ -30,6 +30,7 @@ export default class DropDownNav extends React.Component {
           icon={menuIcon}
           label="Navigation"
           onClick={this.handleToggle}
+          labelStyle={{textTransform: "none"}} // cool find!
         />
         <Drawer 
           width={300} 
