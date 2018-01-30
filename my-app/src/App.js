@@ -27,6 +27,8 @@ class App extends Component {
 
           <Header />
 
+          <StudentSignupPage />
+
           <LoginPage />
 
           <Footer />
