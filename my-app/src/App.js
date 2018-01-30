@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
 import logo from './logo.svg';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import './App.css';
 
 // test imports
@@ -23,11 +25,12 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <MuiThemeProvider>
+      {/* below is where theme was changed */}
+        <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}> 
 
           <Header />
 
-          <LoginPage />
+          <EmployerDashboardPage />
 
           <Footer />
 
