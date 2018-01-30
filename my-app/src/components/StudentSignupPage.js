@@ -13,13 +13,8 @@ class StudentSignUpPage extends React.Component {
   render() {
     return (
       <div>
-        <h1>StudentSignUpPage.js</h1>
         <h2>Tell us a little about yourself...</h2>
-        <p>Company logo:
-                <FloatingActionButton mini={true} style={style}>
-            <ContentAdd />
-          </FloatingActionButton>
-        </p>
+        
         <p>First Name: <TextField hintText="First name" /></p>
         <p>Last Name: <TextField hintText="Last name" /></p>
         <p>Major/Field of Study: <TextField hintText="e.g. Software Development" /></p>
