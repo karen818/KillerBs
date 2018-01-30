@@ -31,6 +31,8 @@ class App extends Component {
 
           <LoginPage />
 
+          <DashStudentPage />
+
           <Footer />
 
         </MuiThemeProvider>

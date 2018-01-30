@@ -1,6 +1,7 @@
 import React from 'react';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
+import Divider from 'material-ui/Divider';
 import FontIcon from 'material-ui/FontIcon';
 
 import {
@@ -12,10 +13,18 @@ import {
   TableRowColumn,
 } from 'material-ui/Table';
 
+const buttonStyle = {
+  margin: 12,
+  width: 200
+}
+
 const tableStyle = {
-  width: 1050,
+  width: 1250,
   margin: 'auto',
-  marginTop: 30
+  marginTop: 30,
+  textAlign: 'center',
+  backgroundColor: 'rgba(0, 188, 212, 0.20)'
+
 };
 const table = {
   width: '100%'
@@ -58,19 +67,20 @@ class DashStudentPage extends React.Component {
   };
 
 
-
-
   render () {
     return (
     <div>
+      <Divider />
       <div>
-        <h1>DashStudentPage.js</h1>
+        <h1>Welcome Back USER NAME</h1>
         <p>Search:
           <TextField style={style}
             hintText="FIND A JOB"
           />
         </p>
       </div>
+      <RaisedButton label="Search" primary={true} style={buttonStyle} />
+
         <div style={table}>
         <Table style={tableStyle} onRowSelection={this.handleRowSelection}>
           <TableHeader>
@@ -98,14 +108,7 @@ class DashStudentPage extends React.Component {
             </TableRow>
           </TableBody>
         </Table>
-        <RaisedButton
-      label="Choose an Image"
-      labelPosition="before"
-      style={styles.button}
-      containerElement="label"
-    >
-      <input type="file" style={styles.exampleImageInput} />
-    </RaisedButton>
+          <RaisedButton label="Edit" primary={false} style={buttonStyle} />
       </div>
       {/* editButton() */}
     </div>
