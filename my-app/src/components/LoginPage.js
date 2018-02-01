@@ -3,6 +3,7 @@ import Divider from 'material-ui/Divider';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 
+
 const style = {
   margin: 12,
 };
@@ -25,7 +26,7 @@ class LoginPage extends React.Component {
         </p>
         <a href="#">forgot password?</a>
         <br />
-        <RaisedButton label="Login" primary={true} style={style} />
+        <RaisedButton label="Login(as student)" primary={true} style={style} />
         <Divider />
         <h3>Sing up</h3>
         <RaisedButton label="Student" primary={true} style={style} />
