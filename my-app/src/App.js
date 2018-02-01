@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
+import { Link, Route, Switch } from 'react-router-dom';
 import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
-import logo from './logo.svg';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import './App.css';
@@ -26,15 +26,29 @@ class App extends Component {
     return (
       <div className="App">
       {/* below is where theme was changed */}
-        <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}> 
+        <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
 
-          <Header />
+          {/* <Header />
+
+          <LoginPage />
 
           <EmployerDashboardPage />
 
           <DashStudentPage />
 
-          <Footer />
+          <Footer /> */}
+        <nav className="navbar navbar-light">
+          <ul className="nav navbar-nav">
+            <li><Link to="/">Homes</Link></li>
+            <li><Link to="/studentLogIn">Student Login</Link></li>
+          </ul>
+       </nav>
+
+       <Switch>
+        <Route exact path="/" component={LoginPage}/>
+        <Route path="/studentLogIn" component={DashStudentPage}/>
+      </Switch>
+
 
         </MuiThemeProvider>
       </div>
