@@ -32,7 +32,7 @@ class JobPostedPage extends React.Component {
   render() {
     return (
     	<div>
-    	<p>
+    	<div>
 	      <Card expanded={this.state.expanded} onExpandChange={this.handleExpandChange}>
 	        <CardHeader
 	          title="{Employer name}"
@@ -102,7 +102,7 @@ class JobPostedPage extends React.Component {
 	          <FlatButton label="Favorite" secondary={true} hoverColor="#212121" rippleColor="#FFE082"  />
 	        </CardActions>
 	      </Card>
-	      </p>
+	      </div>
       </div>
     );
   }
