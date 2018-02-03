@@ -13,17 +13,17 @@ class LoginPage extends React.Component {
     return (
       <div>
         <h1>Find A Job!</h1>
-        <p>Email:
+        <div>Email:
           <TextField style={style}
             hintText="Must use ACC email"
           />
-        </p>
+        </div>
         <br />
-        <p>Password:
+        <div>Password:
           <TextField style={style}
             hintText="Enter password here"
           />
-        </p>
+        </div>
         <a href="#">forgot password?</a>
         <br />
         <RaisedButton label="Login(as student)" primary={true} style={style} />
