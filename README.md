@@ -1,2 +1,2 @@
 # KillerBs
-Final project for ACC Software Bootcamp - VitaminB yo!
+Final project for ACC Software Bootcamp
