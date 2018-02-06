@@ -25,29 +25,33 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-      {/* below is where theme was changed */}
+
         <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
 
-          {/* <Header />
+          {/* <Header /> */}
 
-          <LoginPage />
+          {/* <LoginPage /> */}
 
-          <EmployerDashboardPage />
+          {/* <EmpCreatePostPage /> */}
 
-          <DashStudentPage />
+          {/* <EmployerDashboardPage /> */}
 
-          <Footer /> */}
-        <nav className="navbar navbar-light">
+          <EditStudentAcctPage />
+
+          {/* <DashStudentPage /> */}
+
+          {/* <Footer /> */}
+        {/* <nav className="navbar navbar-light">
           <ul className="nav navbar-nav">
             <li><Link to="/">Homes</Link></li>
             <li><Link to="/studentLogIn">Student Login</Link></li>
           </ul>
-       </nav>
+       </nav> */}
 
-       <Switch>
+       {/* <Switch>
         <Route exact path="/" component={LoginPage}/>
         <Route path="/studentLogIn" component={DashStudentPage}/>
-      </Switch>
+      </Switch> */}
 
 
         </MuiThemeProvider>
