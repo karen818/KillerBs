@@ -25,6 +25,39 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+<<<<<<< HEAD
+
+        <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
+
+         <Header />
+
+         <nav className="navbar navbar-light">
+           <ul className="nav navbar-nav">
+             <li><Link to="/">Login Page</Link></li>
+             <li><Link to="/student-dash">Student Dash</Link></li>
+             <li><Link to="/student-signup">Student Sign Up</Link></li>
+             <li><Link to="/edit-student-acct">Edit Student Acct</Link></li>
+             <li><Link to="/employer-dash">Employer Dash</Link></li>
+             <li><Link to="/employer-signup">Employer Sign Up</Link></li>
+             <li><Link to="/edit-employer-acct">Edit Employer Acct</Link></li>
+             <li><Link to="/job-posted">Job Posting</Link></li>
+             <li><Link to="/edit-job-post">Edit Job Post</Link></li>
+           </ul>
+         </nav>
+
+         <Switch>
+           <Route exact path="/" component={LoginPage} />
+           <Route path="/student-dash" component={DashStudentPage} />
+           <Route path="/student-signup" component={StudentSignupPage} />
+           <Route path="/edit-student-acct" component={EditStudentAcctPage} />
+           <Route path="/employer-dash" component={EmployerDashboardPage} />
+           <Route path="/employer-signup" component={EmployerSignupPage} />
+           <Route path="/edit-employer-acct" component={EditEmployerAcctPage} />
+           <Route path="/job-posted" component={JobPostedPage} />
+           <Route path="/edit-job-post" component={EmpEditPostPage} />
+         </Switch>
+         <Footer />
+=======
         {/* below is where theme was changed */}
         <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
 
@@ -57,9 +90,10 @@ class App extends Component {
           </Switch>
 
           <Footer />
+>>>>>>> 30bad6205e994c5254172cd10f15c2f46deda727
 
-        </MuiThemeProvider>
-      </div>
+     </MuiThemeProvider>
+   </div>
     );
   }
 }
