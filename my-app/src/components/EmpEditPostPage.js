@@ -1,11 +1,13 @@
 import React from 'react';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
+import EmployerHeader from './EmployerHeader';
 
 class EmpEditPostPage extends React.Component {
   render () {
     return (
       <div>
+				<EmployerHeader />
         <h2>Edit Job Posting</h2>
         <p>Job Title: 
         	<TextField 

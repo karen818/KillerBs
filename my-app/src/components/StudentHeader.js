@@ -1,9 +1,9 @@
 import React from 'react';
 import AppBar from 'material-ui/AppBar';
 import FlatButton from 'material-ui/FlatButton';
+import StudentDropDownNav from './StudentDropDownNav';
 
 // in order to pick what we like best, comment in and out ToolbarGroup or DropDownMenu in DropDownNav.js 
-import DropDownNav from './DropDownNav';
 import RightDropDownNav from './RightDropDownNav';
 
 import SearchBar from 'material-ui-search-bar';
@@ -23,15 +23,15 @@ const MyNavLinks = () => (
   </ToolbarGroup> 
 );
 
-const Header = () => (
+const StudentHeader = () => (
   <AppBar
     title="JobFinderApp"
-    iconElementLeft={<DropDownNav />}
+    iconElementLeft={<StudentDropDownNav />}
     iconElementRight={<MyNavLinks />}
     // iconElementRight={<RightDropDownNav />}
   />
 );
 
-export default Header;
+export default StudentHeader;
 
 

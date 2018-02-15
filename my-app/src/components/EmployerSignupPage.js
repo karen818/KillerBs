@@ -4,6 +4,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
+import EmployerHeader from './EmployerHeader';
 
 const style = {
   margin: 12,
@@ -13,6 +14,7 @@ class EmployerSignupPage extends React.Component {
   render () {
     return (
       <div>
+        <EmployerHeader />
         <h1>EmployerSignupPage.js</h1>
         <h2>Tell us a little about yourself...</h2>
         	<p>Company logo: 

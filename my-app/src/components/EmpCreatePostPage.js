@@ -1,11 +1,13 @@
 import React from 'react';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
+import EmployerHeader from './EmployerHeader';
 
 class EmpCreatePostPage extends React.Component {
   render () {
     return (
       <div>
+				<EmployerHeader />
         <h1>EmpCreatePostPage.js</h1>
         <h2>Jorb Creator 9000</h2>
         <p>Job Title: 

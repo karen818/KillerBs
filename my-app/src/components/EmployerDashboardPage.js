@@ -3,6 +3,7 @@ import { Card, CardActions, CardHeader, CardMedia, CardTitle, CardText } from 'm
 import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
 import Toggle from 'material-ui/Toggle';
+import EmployerHeader from './EmployerHeader';
 
 import FontIcon from 'material-ui/FontIcon';
 import IconLocationOn from 'material-ui/svg-icons/communication/location-on';
@@ -46,6 +47,7 @@ export default class EmployerDashboardPage extends React.Component {
   render() {
     return (
       <div>
+        <EmployerHeader />
         <h1>Welcome (Name)!></h1>
         <Card expanded={this.state.expanded} onExpandChange={this.handleExpandChange}>
           <CardHeader
