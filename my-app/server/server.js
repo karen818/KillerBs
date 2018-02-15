@@ -19,19 +19,27 @@ console.log("mLab is working");
 
 ////////////////////////////////////////////////////////////////
 
-// db.Students.insertOne({firstName:"Jason", lastName:"Jiron", email:"bad@code.net", password:"000"});
+// MongoClient.connect(url, (err, db) => {
+//   if(err) throw err;
+//   var dbo = db.db("killerbs")
+//   var myobj = {firstName:"Jason", lastName:"Jiron", email:"bad@code.net", password:"000"};
+//   dbo.collection("Students").insertOne(myobj, (err, res) => {
+//     if (err) throw err;
+//     console.log("test insert worked");
+//     db.close();
+//   });
+// });
 
-MongoClient.connect(url, (err, db) => {
-  if(err) throw err;
-  var dbo = db.db("killerbs")
-  var myobj = {firstName:"Jason", lastName:"Jiron", email:"bad@code.net", password:"000"};
-  dbo.collection("Students").insertOne(myobj, (err, res) => {
-    if (err) throw err;
-    console.log("trying to insert");
-    db.close();
+app.post('/student-signup', (req, res) => {
+  var studentSignup = new Signup(req.body);
+  studentSignup.save()
+  .then(item => {
+    res.send('New sign in saved');
+  })
+  .catch(err => {
+    res.status(400).send('unable to save data');
   });
 });
-
 
 
 app.get('/login', (req, res) => {});
