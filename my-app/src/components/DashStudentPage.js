@@ -71,6 +71,7 @@ class DashStudentPage extends React.Component {
   render () {
     return (
     <div>
+      <StudentHeader />
       <Divider />
       <div>
         <h1>Welcome Back USER NAME</h1>

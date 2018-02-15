@@ -14,6 +14,7 @@ class EditStudentAcctPage extends React.Component {
   render() {
     return (
       <div>
+        <StudentHeader />
         <h2>Edit Your Account Information</h2>
         <p>First Name: <TextField hintText="First name" /></p>
         <p>Last Name: <TextField hintText="Last name" /></p>
