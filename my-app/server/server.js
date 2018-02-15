@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const MongoClient = require('mongodb');
 
 const {ObjectID} = require('mongodb');
 const {Job} = require('./models/Jobs.js');
@@ -12,11 +13,25 @@ const app = express();
 
 app.use(bodyParser.json());
 
-var db = 'mongodb://JasonJiron:milkshake8@ds225078.mlab.com:25078/killerbs';
+var url = 'mongodb://jason.jiron:milkshake8@ds225078.mlab.com:25078/killerbs';
 console.log("mLab is working");
 
 
 ////////////////////////////////////////////////////////////////
+
+// db.Students.insertOne({firstName:"Jason", lastName:"Jiron", email:"bad@code.net", password:"000"});
+
+MongoClient.connect(url, (err, db) => {
+  if(err) throw err;
+  var dbo = db.db("killerbs")
+  var myobj = {firstName:"Jason", lastName:"Jiron", email:"bad@code.net", password:"000"};
+  dbo.collection("Students").insertOne(myobj, (err, res) => {
+    if (err) throw err;
+    console.log("trying to insert");
+    db.close();
+  });
+});
+
 
 
 app.get('/login', (req, res) => {});
@@ -29,7 +44,7 @@ app.post('/login', (req, res) => {
     handleError(res, "Invalid user", "Must provide first and last name.", 400);
   }
 
-  db.collection(Students).insertOne(newLogin, () => (err, doc) {
+  db.collection(Students).insertOne(newLogin, (err, doc) => {
     if (err) {
         handleError(res, err.message, "Failed to create new contact.");
     } else {
