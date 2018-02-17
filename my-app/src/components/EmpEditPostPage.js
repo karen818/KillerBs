@@ -2,6 +2,7 @@ import React from 'react';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import EmployerHeader from './EmployerHeader';
+import { Link } from 'react-router-dom';
 
 class EmpEditPostPage extends React.Component {
   render () {
@@ -38,7 +39,12 @@ class EmpEditPostPage extends React.Component {
         		fullWidth={true}
         	/>
         </p>
-        <RaisedButton label="Cancel" primary={true} fullWidth={true} />
+				<RaisedButton 
+					containerElement={<Link to="/employer-dash" />}
+					label="Cancel" 
+					primary={true} 
+					fullWidth={true} 
+				/>
         <RaisedButton label="Update & Save" secondary={true} fullWidth={true} />
       </div>
     );

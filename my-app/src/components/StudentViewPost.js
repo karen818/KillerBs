@@ -4,7 +4,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
 import Toggle from 'material-ui/Toggle';
-import StudentHeader from './EmployerHeader';
+import StudentHeader from './StudentHeader';
 
 class StudentViewPost extends React.Component {
 	  constructor(props) {
