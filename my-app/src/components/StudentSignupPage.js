@@ -4,11 +4,11 @@ import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
+import StudentHeader from './EmployerHeader';
 
 const style = {
   margin: 12,
 };
-
 class StudentSignUpPage extends React.Component {
   constructor(props) {
     super(props);
@@ -20,7 +20,6 @@ class StudentSignUpPage extends React.Component {
       email: '',
       password: ''
     };
-
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -29,15 +28,14 @@ class StudentSignUpPage extends React.Component {
     //handles when text values in form are updated
     this.setState({value: event.target.value});
   }
-
   handleSubmit(event) {
     console.log('You clicked the submit button!');
     event.preventDefault();
   }
-
   render() {
     return (
       <div>
+        <StudentHeader />
         <h2>Tell us a little about yourself...</h2>
         <form onSubmit={this.handleSubmit}>
           <p>
@@ -54,7 +52,6 @@ class StudentSignUpPage extends React.Component {
             />            
            
           </p>
-
           <p>
           <label>
             Last Name: 
@@ -66,7 +63,6 @@ class StudentSignUpPage extends React.Component {
             />            
           </label>
           </p>
-
           <p>
           <label>
             Major: 
@@ -79,7 +75,6 @@ class StudentSignUpPage extends React.Component {
             />            
           </label>    
           </p>
-
           <p>
           <label>
             Skills: 
@@ -95,7 +90,6 @@ class StudentSignUpPage extends React.Component {
             />            
           </label>    
           </p>
-
           <p>
           <label>
             Email: 
@@ -107,7 +101,6 @@ class StudentSignUpPage extends React.Component {
             />            
           </label>
           </p>  
-
           <p>
           <label>
             Create Password: 
@@ -133,14 +126,11 @@ class StudentSignUpPage extends React.Component {
             />            
           </label>
           </p>
-
             <RaisedButton label="Submit" primary={true} style={style} />
             <RaisedButton label="Cancel" secondary={true} style={style} />
         </form>
       </div>
-
     );
   }
 }
-
 export default StudentSignUpPage;
