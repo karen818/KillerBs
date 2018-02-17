@@ -29,7 +29,7 @@ class LoginPage extends React.Component {
         <br />
         <RaisedButton label="Login(as student)" primary={true} style={style} />
         <Divider />
-        <h3>Sing up</h3>
+        <h3>Sign up</h3>
         <RaisedButton 
           containerElement={<Link to="/student-signup" />} 
           label="Student" 

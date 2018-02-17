@@ -37,6 +37,7 @@ class App extends Component {
             <Route path="/employer-signup" component={EmployerSignupPage} />
             <Route path="/edit-employer-acct" component={EditEmployerAcctPage} />
             <Route path="/job-posted" component={JobPostedPage} />
+            <Route path="/view-post" component={JobPostedPage} />
             <Route path="/edit-job-post" component={EmpEditPostPage} />
           </Switch>
           <Footer />

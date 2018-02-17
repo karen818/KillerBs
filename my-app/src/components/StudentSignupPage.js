@@ -4,7 +4,8 @@ import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
-import StudentHeader from './EmployerHeader';
+import StudentHeader from './StudentHeader';
+import { Link } from 'react-router-dom';
 
 const style = {
   margin: 12,
@@ -127,7 +128,12 @@ class StudentSignUpPage extends React.Component {
           </label>
           </p>
             <RaisedButton label="Submit" primary={true} style={style} />
-            <RaisedButton label="Cancel" secondary={true} style={style} />
+            <RaisedButton 
+              containerElement={<Link to="/student-dash" />}  
+              label="Cancel" 
+              secondary={true} 
+              style={style} 
+            />
         </form>
       </div>
     );
