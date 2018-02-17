@@ -44,29 +44,13 @@ app.post('/student-signup', (req, res) => {
 
 app.get('/login', (req, res) => {});
 
-app.post('/login', (req, res) => {
-  var newLogin = req.body;
-  newLogin.createDate = new Date();
-
-  if (!(req.body.firstName || req.bodylastName)) {
-    handleError(res, "Invalid user", "Must provide first and last name.", 400);
-  }
-
-  db.collection(Students).insertOne(newLogin, (err, doc) => {
-    if (err) {
-        handleError(res, err.message, "Failed to create new contact.");
-    } else {
-      res.status(201).json(doc.ops[0]);
-
-    }
-  });
-});
-
 app.get('/student/login/:id', (req, res) => {});
 
 app.put('/student/login/:id', (req, res) => {});
 
 app.delete('/student/login/:id', (req, res) => {});
+
+
 
 
 
