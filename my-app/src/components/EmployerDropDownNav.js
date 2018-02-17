@@ -67,6 +67,9 @@ export default class EmployerDropDownNav extends React.Component {
           <MenuItem containerElement={<Link to="/edit-job-post" />} onClick={this.handleClose}>
             Edit Job Post
           </MenuItem>
+          <MenuItem containerElement={<Link to="/create-post" />} onClick={this.handleClose}>
+            Create Job Post
+          </MenuItem>
         </Drawer>
       </div >
     );

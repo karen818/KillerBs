@@ -17,6 +17,7 @@ import EmpEditPostPage from './components/EmpEditPostPage';
 import EditEmployerAcctPage from './components/EditEmployerAcctPage';
 import Footer from './components/Footer';
 import DashStudentPage from './components/DashStudentPage';
+import StudentViewPost from './components/StudentViewPost';
 
 
 // test imports
@@ -37,8 +38,9 @@ class App extends Component {
             <Route path="/employer-signup" component={EmployerSignupPage} />
             <Route path="/edit-employer-acct" component={EditEmployerAcctPage} />
             <Route path="/job-posted" component={JobPostedPage} />
-            <Route path="/view-post" component={JobPostedPage} />
+            <Route path="/view-post" component={StudentViewPost} />
             <Route path="/edit-job-post" component={EmpEditPostPage} />
+            <Route path="/create-post" component={EmpCreatePostPage} />
           </Switch>
           <Footer />
 
