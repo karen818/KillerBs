@@ -49,23 +49,20 @@ export default class StudentDropDownNav extends React.Component {
               </IconButton>
             }
           />
-          <MenuItem onClick={this.handleClose}>Dashboard</MenuItem>
-          <MenuItem onClick={this.handleClose}>About</MenuItem>
-          <MenuItem onClick={this.handleClose}>FAQ</MenuItem>
-          <MenuItem onClick={this.handleClose}>
-            <Link to="/">Login Page</Link>
+          <MenuItem containerElement={<Link to="/" />} onClick={this.handleClose}>
+            Login Page
           </MenuItem>
-          <MenuItem onClick={this.handleClose}>
-            <Link to="/student-dash">Dashboard</Link>
+          <MenuItem containerElement={<Link to="/student-dash" />} onClick={this.handleClose}>
+            Dashboard
           </MenuItem>
-          <MenuItem onClick={this.handleClose}>
-            <Link to="/student-signup"> Sign Up</Link>
+          <MenuItem containerElement={<Link to="/student-signup" />} onClick={this.handleClose}>
+            Sign Up
           </MenuItem>
-          <MenuItem onClick={this.handleClose}>
-            <Link to="/edit-student-acct">Edit Account</Link>
+          <MenuItem containerElement={<Link to="/edit-student-acct" />} onClick={this.handleClose}>
+            Edit Account
           </MenuItem>
-          <MenuItem onClick={this.handleClose}>
-            <Link to="/job-posted">Job Posting</Link>
+          <MenuItem containerElement={<Link to="/job-posted" />} onClick={this.handleClose}>
+            Job Posting
           </MenuItem>
         </Drawer>
       </div >

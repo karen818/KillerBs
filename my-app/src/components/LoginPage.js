@@ -30,10 +30,18 @@ class LoginPage extends React.Component {
         <RaisedButton label="Login(as student)" primary={true} style={style} />
         <Divider />
         <h3>Sing up</h3>
-        <RaisedButton label="" primary={true} style={style}>
-          <Link to="/student-signup">Student</Link></RaisedButton>
-        <RaisedButton label="" primary={true} style={style}>
-          <Link to="/employer-signup">Employer</Link></RaisedButton>
+        <RaisedButton 
+          containerElement={<Link to="/student-signup" />} 
+          label="Student" 
+          primary={true} 
+          style={style} 
+        />
+        <RaisedButton 
+          containerElement={<Link to="/employer-signup" />} 
+          label="Employer" 
+          primary={true} 
+          style={style} 
+        />
       </div>
     );
   }
