@@ -4,6 +4,8 @@ import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
+import StudentHeader from './EmployerHeader';
+
 const style = {
   margin: 12,
 };
@@ -33,6 +35,7 @@ class StudentSignUpPage extends React.Component {
   render() {
     return (
       <div>
+        <StudentHeader />
         <h2>Tell us a little about yourself...</h2>
         <form onSubmit={this.handleSubmit}>
           <p>
