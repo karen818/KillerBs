@@ -49,26 +49,23 @@ export default class EmployerDropDownNav extends React.Component {
               </IconButton>
             }
           />
-          <MenuItem onClick={this.handleClose}>Dashboard</MenuItem>
-          <MenuItem onClick={this.handleClose}>About</MenuItem>
-          <MenuItem onClick={this.handleClose}>FAQ</MenuItem>
-          <MenuItem onClick={this.handleClose}>
-            <Link to="/">Login Page</Link>
+          <MenuItem containerElement={<Link to="/" />} onClick={this.handleClose}>
+            Login Page
           </MenuItem>
-          <MenuItem onClick={this.handleClose}>
-            <Link to="/employer-dash">Dashboard</Link>
+          <MenuItem containerElement={<Link to="/employer-dash" />} onClick={this.handleClose}>
+            Dashboard
           </MenuItem>
-          <MenuItem onClick={this.handleClose}>
-            <Link to="/employer-signup">Sign Up</Link>
+          <MenuItem containerElement={<Link to="/employer-signup" />} onClick={this.handleClose}>
+            Sign Up
           </MenuItem>
-          <MenuItem onClick={this.handleClose}>
-            <Link to="/edit-employer-acct">Edit Account</Link>
+          <MenuItem containerElement={<Link to="/edit-employer-acct" />} onClick={this.handleClose}>
+            Edit Account
           </MenuItem>
-          <MenuItem onClick={this.handleClose}>
-            <Link to="/job-posted">Job Posting</Link>
+          <MenuItem containerElement={<Link to="/job-posted" />} onClick={this.handleClose}>
+            Job Posting
           </MenuItem>
-          <MenuItem onClick={this.handleClose}>
-            <Link to="/edit-job-post">Edit Job Post</Link>
+          <MenuItem containerElement={<Link to="/edit-job-post" />} onClick={this.handleClose}>
+            Edit Job Post
           </MenuItem>
         </Drawer>
       </div >
