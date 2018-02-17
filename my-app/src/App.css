@@ -31,4 +31,6 @@ body {
   background: #333;
   color: white;
   font-family: 'Source Sans Pro', sans-serif;
+  padding: 0 auto;
+  margin: 0 auto;
 }
