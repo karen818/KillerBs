@@ -2,6 +2,8 @@ import React from 'react';
 import Divider from 'material-ui/Divider';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
+import { Link } from 'react-router-dom';
+
 
 const style = {
   margin: 12,
@@ -12,24 +14,34 @@ class LoginPage extends React.Component {
     return (
       <div>
         <h1>Find A Job!</h1>
-        <p>Email:
+        <div>Email:
           <TextField style={style}
             hintText="Must use ACC email"
           />
-        </p>
+        </div>
         <br />
-        <p>Password:
+        <div>Password:
           <TextField style={style}
             hintText="Enter password here"
           />
-        </p>
+        </div>
         <a href="#">forgot password?</a>
         <br />
         <RaisedButton label="Login" primary={true} style={style} />
         <Divider />
-        <h3>Sing up</h3>
-        <RaisedButton label="Student" primary={true} style={style} />
-        <RaisedButton label="Employer" primary={true} style={style} />
+        <h3>Sign up</h3>
+        <RaisedButton 
+          containerElement={<Link to="/student-signup" />} 
+          label="Student" 
+          primary={true} 
+          style={style} 
+        />
+        <RaisedButton 
+          containerElement={<Link to="/employer-signup" />} 
+          label="Employer" 
+          primary={true} 
+          style={style} 
+        />
       </div>
     );
   }

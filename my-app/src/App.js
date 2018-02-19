@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { Link, Route, Switch } from 'react-router-dom';
+import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import './App.css';
 
 // test imports
@@ -15,7 +17,8 @@ import EmpEditPostPage from './components/EmpEditPostPage';
 import EditEmployerAcctPage from './components/EditEmployerAcctPage';
 import Footer from './components/Footer';
 import DashStudentPage from './components/DashStudentPage';
-import Header from './components/Header';
+import StudentViewPost from './components/StudentViewPost';
+
 
 // test imports
 
@@ -23,12 +26,22 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <MuiThemeProvider>
 
-          <Header />
+        <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
 
-          <LoginPage />
-
+          <Switch>
+            <Route exact path="/" component={LoginPage} />
+            <Route path="/student-dash" component={DashStudentPage} />
+            <Route path="/student-signup" component={StudentSignupPage} />
+            <Route path="/edit-student-acct" component={EditStudentAcctPage} />
+            <Route path="/employer-dash" component={EmployerDashboardPage} />
+            <Route path="/employer-signup" component={EmployerSignupPage} />
+            <Route path="/edit-employer-acct" component={EditEmployerAcctPage} />
+            <Route path="/job-posted" component={JobPostedPage} />
+            <Route path="/view-post" component={StudentViewPost} />
+            <Route path="/edit-job-post" component={EmpEditPostPage} />
+            <Route path="/create-post" component={EmpCreatePostPage} />
+          </Switch>
           <Footer />
 
         </MuiThemeProvider>

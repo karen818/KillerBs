@@ -4,9 +4,9 @@ import RaisedButton from 'material-ui/RaisedButton';
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
 import Toggle from 'material-ui/Toggle';
-import EmployerHeader from './EmployerHeader';
+import StudentHeader from './StudentHeader';
 
-class JobPostedPage extends React.Component {
+class StudentViewPost extends React.Component {
 	  constructor(props) {
     super(props);
     this.state = {
@@ -33,7 +33,7 @@ class JobPostedPage extends React.Component {
   render() {
     return (
     	<div>
-			<EmployerHeader />
+			<StudentHeader />
     	<div>
 	      <Card expanded={this.state.expanded} onExpandChange={this.handleExpandChange}>
 	        <CardHeader
@@ -110,4 +110,4 @@ class JobPostedPage extends React.Component {
   }
 }
 
-export default JobPostedPage;
+export default StudentViewPost;

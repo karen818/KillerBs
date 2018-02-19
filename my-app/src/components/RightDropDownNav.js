@@ -6,6 +6,7 @@ import IconMenu from 'material-ui/IconMenu';
 import IconButton from 'material-ui/IconButton';
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 import SearchBar from 'material-ui-search-bar';
+import { Link } from 'react-router-dom';
 
 
 
@@ -30,7 +31,7 @@ class RightDropDownNav extends React.Component {
           >
           <MenuItem primaryText="End Fascism" />
             <MenuItem primaryText="Help" />
-            <MenuItem primaryText="Sign out" />
+            <MenuItem containerElement={<Link to="/" />} primaryText="Sign out" />
         </IconMenu>
       </div>
     );

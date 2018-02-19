@@ -7,12 +7,14 @@ import RaisedButton from 'material-ui/RaisedButton';
 import IconButton from 'material-ui/IconButton';
 import NavigationClose from 'material-ui/svg-icons/navigation/close';
 
+import { Link } from 'react-router-dom';
+
 import FontIcon from 'material-ui/FontIcon';
 //import IconLocationOn from 'material-ui/svg-icons/communication/location-on'; IS THIS IMPORTANT?
 
 const menuIcon = <FontIcon className="material-icons">menu</FontIcon>
 
-export default class DropDownNav extends React.Component {
+export default class StudentDropDownNav extends React.Component {
 
   constructor(props) {
     super(props);
@@ -30,12 +32,12 @@ export default class DropDownNav extends React.Component {
           icon={menuIcon}
           label="Navigation"
           onClick={this.handleToggle}
-          labelStyle={{textTransform: "none"}} // cool find!
+          labelStyle={{ textTransform: "none" }} // cool find!
         />
-        <Drawer 
-          width={300} 
-          open={this.state.open} 
-          onRequestChange={(open) => this.setState({ open })}  
+        <Drawer
+          width={300}
+          open={this.state.open}
+          onRequestChange={(open) => this.setState({ open })}
           docked={false}
         >
           <AppBar
@@ -47,12 +49,23 @@ export default class DropDownNav extends React.Component {
               </IconButton>
             }
           />
-          <MenuItem onClick={this.handleClose}>Dashboard</MenuItem>
-          <MenuItem onClick={this.handleClose}>About</MenuItem>
-          <MenuItem onClick={this.handleClose}>FAQ</MenuItem>
-          <MenuItem onClick={this.handleClose}>|potential different track|</MenuItem>
+          <MenuItem containerElement={<Link to="/" />} onClick={this.handleClose}>
+            Login Page
+          </MenuItem>
+          <MenuItem containerElement={<Link to="/student-dash" />} onClick={this.handleClose}>
+            Dashboard
+          </MenuItem>
+          <MenuItem containerElement={<Link to="/student-signup" />} onClick={this.handleClose}>
+            Sign Up
+          </MenuItem>
+          <MenuItem containerElement={<Link to="/edit-student-acct" />} onClick={this.handleClose}>
+            Edit Account
+          </MenuItem>
+          <MenuItem containerElement={<Link to="/view-post" />} onClick={this.handleClose}>
+            Job Posting
+          </MenuItem>
         </Drawer>
-      </div>
+      </div >
     );
   }
 }
