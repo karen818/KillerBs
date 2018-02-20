@@ -35,12 +35,12 @@ class EmployerSignupPage extends React.Component {
   }
 
   handleSubmit(event) {
-    alert('Coder Vegeta would be  proud --> '
-      + this.state.firstName + ' '
-      + this.state.lastName + ' '
-      + this.state.companyName + ' '
-      + this.state.email + ' '
-      + this.state.password + ' '
+    alert('EmployerSignupPage --> '
+      + this.state.firstName + ' | '
+      + this.state.lastName + ' | '
+      + this.state.companyName + ' | '
+      + this.state.email + ' | '
+      + this.state.password + ' | '
       + this.state.retypePassword + '.'
     );
     event.preventDefault();
