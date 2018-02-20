@@ -4,6 +4,8 @@ import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
 import Toggle from 'material-ui/Toggle';
 import EmployerHeader from './EmployerHeader';
+import { Link } from 'react-router-dom';
+
 
 import FontIcon from 'material-ui/FontIcon';
 import IconLocationOn from 'material-ui/svg-icons/communication/location-on';
@@ -74,7 +76,12 @@ export default class EmployerDashboardPage extends React.Component {
           </CardMedia>
           <CardTitle title="Jobs you've posted" subtitle="" expandable={true} />
           <CardText expandable={true}>
-            <RaisedButton label="Create New Job Post" secondary={true} style={style} />
+            <RaisedButton 
+              containerElement={<Link to="/create-post" />}
+              label="Create New Job Post" 
+              secondary={true} 
+              style={style} 
+            />
             {/* below styling may eventually be overwritten in a css file */}
             <textarea>this is where links for jobs employer has posted will be populated</textarea>
           </CardText>
@@ -93,7 +100,12 @@ export default class EmployerDashboardPage extends React.Component {
           <CardActions>
             <FlatButton label="Expand" onClick={this.handleExpand} />
             <FlatButton label="Reduce" onClick={this.handleReduce} />
-            <RaisedButton label="Edit/Update Profile" secondary={true} style={style} />
+            <RaisedButton 
+              containerElement={<Link to="/edit-employer-acct" />}
+              label="Edit/Update Profile" 
+              secondary={true} 
+              style={style} 
+            />
           </CardActions>
         </Card>
       </div>

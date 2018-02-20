@@ -22,7 +22,7 @@ class Footer extends Component {
 
   render() {
     return (
-      <Paper zDepth={1}>
+      <Paper zDepth={1} className="footer-bottom">
         <BottomNavigation>
           <BottomNavigationItem
             label="Help"

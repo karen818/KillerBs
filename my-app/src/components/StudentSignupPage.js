@@ -37,7 +37,7 @@ class StudentSignUpPage extends React.Component {
 
     fetch('http://localhost:3000/api/data',{
       method: 'POST',
-      body: data,
+      body: data
     })
     .then(res => {
       console.log('You clicked the submit button! Here is the response ' + res)

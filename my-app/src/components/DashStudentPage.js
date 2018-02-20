@@ -4,6 +4,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import Divider from 'material-ui/Divider';
 import FontIcon from 'material-ui/FontIcon';
 import StudentHeader from './StudentHeader';
+import { Link } from 'react-router-dom';
 
 import {
   Table,
@@ -110,7 +111,12 @@ class DashStudentPage extends React.Component {
             </TableRow>
           </TableBody>
         </Table>
-          <RaisedButton label="Edit" primary={false} style={buttonStyle} />
+          <RaisedButton 
+            containerElement={<Link to="/edit-student-acct" />}
+            label="Edit" 
+            primary={false} 
+            style={buttonStyle} 
+          />
       </div>
       {/* editButton() */}
     </div>
