@@ -5,6 +5,7 @@ import TextField from 'material-ui/TextField';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
 import EmployerHeader from './EmployerHeader';
+import { Link } from 'react-router-dom';
 
 const style = {
   margin: 12,
@@ -30,7 +31,12 @@ class EmployerSignupPage extends React.Component {
         	<p>Re-type password: <TextField hintText="Re-enter password for veriication"/></p>
 
         <RaisedButton label="Submit" primary={true} style={style} />
-        <RaisedButton label="Cancel" secondary={true} style={style} />
+        <RaisedButton 
+          containerElement={<Link to="/employer-dash" />} 
+          label="Cancel" 
+          secondary={true} 
+          style={style} 
+        />
       </div>
 
     );

@@ -27,9 +27,9 @@ class LoginPage extends React.Component {
         </div>
         <a href="#">forgot password?</a>
         <br />
-        <RaisedButton label="Login(as student)" primary={true} style={style} />
+        <RaisedButton label="Login" primary={true} style={style} />
         <Divider />
-        <h3>Sing up</h3>
+        <h3>Sign up</h3>
         <RaisedButton 
           containerElement={<Link to="/student-signup" />} 
           label="Student" 
