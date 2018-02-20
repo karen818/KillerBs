@@ -12,31 +12,142 @@ const style = {
 };
 
 class EmployerSignupPage extends React.Component {
-  render () {
+  constructor(props) {
+    super(props);
+    this.state = {
+      firstName: '',
+      lastName: '',
+      companyName: '',
+      email: '',
+      password: '',
+      retypePassword: ''
+    };
+
+    this.handleSubmit = this.handleSubmit.bind(this);
+
+    this.handleFirstNameChange = this.handleFirstNameChange.bind(this);
+    this.handleLastNameChange = this.handleLastNameChange.bind(this);
+    this.handleCompanyNameChange = this.handleCompanyNameChange.bind(this);
+    this.handleEmailChange = this.handleEmailChange.bind(this);
+    this.handlePasswordChange = this.handlePasswordChange.bind(this);
+    this.handleRetypePasswordChange = this.handleRetypePasswordChange.bind(this);
+
+  }
+
+  handleSubmit(event) {
+    alert('Coder Vegeta would be  proud --> '
+      + this.state.firstName + ' '
+      + this.state.lastName + ' '
+      + this.state.companyName + ' '
+      + this.state.email + ' '
+      + this.state.password + ' '
+      + this.state.retypePassword + '.'
+    );
+    event.preventDefault();
+  }
+
+  handleFirstNameChange(event) {
+    this.setState({firstName: event.target.value});
+  }
+
+  handleLastNameChange(event) {
+    this.setState({lastName: event.target.value});
+  }
+
+  handleCompanyNameChange(event) {
+    this.setState({companyName: event.target.value});
+  }
+
+  handleEmailChange(event) {
+    this.setState({email: event.target.value});
+  }
+
+  handlePasswordChange(event) {
+    this.setState({password: event.target.value});
+  }
+
+  handleRetypePasswordChange(event) {
+    this.setState({retypePassword: event.target.value});
+  }
+
+  render() {
     return (
       <div>
         <EmployerHeader />
         <h1>EmployerSignupPage.js</h1>
         <h2>Tell us a little about yourself...</h2>
-        	<p>Company logo: 
+        <p>Company logo:
         		<FloatingActionButton mini={true} style={style}>
-      				<ContentAdd />
-    				</FloatingActionButton>
-    			</p>
-        	<p>First Name: <TextField hintText="First name"/></p>
-          <p>Last Name: <TextField hintText="Last name"/></p>
-        	<p>Company Name: <TextField hintText="Enter company name"/></p>
-        	<p>Email: <TextField hintText="Must use ACC email"/></p>
-        	<p>Password: <TextField hintText="Password requirements go here"/></p>
-        	<p>Re-type password: <TextField hintText="Re-enter password for veriication"/></p>
+            <ContentAdd />
+          </FloatingActionButton>
+        </p>
 
-        <RaisedButton label="Submit" primary={true} style={style} />
+        <form onSubmit={this.handleSubmit}>
+
+        <p>First Name:
+          <TextField
+            name="firstName"
+            hintText="First name"
+            onChange={this.handleFirstNameChange}
+            value={this.setState.firstName}
+          />
+        </p>
+        <p>Last Name: 
+          <TextField 
+            name="lastName"
+            hintText="Last name" 
+            onChange={this.handleLastNameChange} 
+            value={this.setState.lastName} 
+          />
+        </p>
+        <p>Company Name: 
+          <TextField 
+            name="companyName"
+            hintText="Enter company name" 
+            onChange={this.handleCompanyNameChange} 
+            value={this.setState.companyName} 
+          />
+        </p>
+        <p>Email: 
+          <TextField 
+            name="email"
+            hintText="Must use ACC email" 
+            onChange={this.handleEmailChange} 
+            value={this.setState.email} 
+          />
+        </p>
+        <p>Password: 
+          <TextField 
+            name="password"
+            hintText="Password requirements go here" 
+            onChange={this.handlePasswordChange} 
+            value={this.setState.password} 
+          />
+        </p>
+        <p>Re-type password: 
+          <TextField 
+            name="retypePassword"
+            hintText="Re-enter password for veriication" 
+            onChange={this.handleRetypePasswordChange} 
+            value={this.setState.retypePassword} 
+          />
+        </p>
+
         <RaisedButton 
-          containerElement={<Link to="/employer-dash" />} 
-          label="Cancel" 
-          secondary={true} 
+          label="Submit" 
+          primary={true} 
           style={style} 
+          type="submit"
         />
+        <RaisedButton
+          containerElement={<Link to="/employer-dash" />}
+          label="Cancel"
+          secondary={true}
+          style={style}
+        />
+
+        </form> 
+
       </div>
 
     );

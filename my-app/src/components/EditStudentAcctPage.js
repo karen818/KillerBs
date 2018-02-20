@@ -14,7 +14,7 @@ const style = {
 class EditStudentAcctPage extends React.Component {
   render() {
     return (
-      <div>
+      <div> 
         <StudentHeader />
         <h2>Edit Your Account Information</h2>
         <p>First Name: <TextField hintText="First name" /></p>
