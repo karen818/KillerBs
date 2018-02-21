@@ -20,7 +20,8 @@ class EmployerSignupPage extends React.Component {
       companyName: '',
       email: '',
       password: '',
-      retypePassword: ''
+      retypePassword: '',
+      url: ''
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -31,6 +32,7 @@ class EmployerSignupPage extends React.Component {
     this.handleEmailChange = this.handleEmailChange.bind(this);
     this.handlePasswordChange = this.handlePasswordChange.bind(this);
     this.handleRetypePasswordChange = this.handleRetypePasswordChange.bind(this);
+    this.handleUrlChange = this.handleUrlChange.bind(this);
 
   }
 
@@ -41,7 +43,8 @@ class EmployerSignupPage extends React.Component {
       + this.state.companyName + ' | '
       + this.state.email + ' | '
       + this.state.password + ' | '
-      + this.state.retypePassword + '.'
+      + this.state.retypePassword + ' | ' 
+      + this.state.url + '.'
     );
     event.preventDefault();
   }
@@ -68,6 +71,10 @@ class EmployerSignupPage extends React.Component {
 
   handleRetypePasswordChange(event) {
     this.setState({retypePassword: event.target.value});
+  }
+
+  handleUrlChange(event) {
+    this.setState({url: event.target.value});
   }
 
   render() {
@@ -130,6 +137,14 @@ class EmployerSignupPage extends React.Component {
             hintText="Re-enter password for veriication" 
             onChange={this.handleRetypePasswordChange} 
             value={this.setState.retypePassword} 
+          />
+        </p>
+        <p>URL: 
+          <TextField 
+            name="url"
+            hintText="Enter URL" 
+            onChange={this.handleUrlChange} 
+            value={this.setState.url} 
           />
         </p>
 
