@@ -20,7 +20,8 @@ class EditEmployerAcctPage extends React.Component {
       companyName: '',
       email: '',
       password: '',
-      retypePassword: ''
+      retypePassword: '',
+      url: ''
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -31,6 +32,7 @@ class EditEmployerAcctPage extends React.Component {
     this.handleEmailUpdate = this.handleEmailUpdate.bind(this);
     this.handlePasswordUpdate = this.handlePasswordUpdate.bind(this);
     this.handleRetypePasswordUpdate = this.handleRetypePasswordUpdate.bind(this);
+    this.handleUrlUpdate = this.handleUrlUpdate.bind(this);
 
   }
 
@@ -41,7 +43,8 @@ class EditEmployerAcctPage extends React.Component {
       + this.state.companyName + ' | '
       + this.state.email + ' | '
       + this.state.password + ' | '
-      + this.state.retypePassword + '.'
+      + this.state.retypePassword + ' | ' 
+      + this.state.url + '.'
     );
     event.preventDefault();
   }
@@ -68,6 +71,10 @@ class EditEmployerAcctPage extends React.Component {
 
   handleRetypePasswordUpdate(event) {
     this.setState({ retypePassword: event.target.value });
+  }
+
+  handleUrlUpdate(event) {
+    this.setState({ url: event.target.value });
   }
 
   render() {
@@ -131,6 +138,14 @@ class EditEmployerAcctPage extends React.Component {
               value={this.setState.retypePassword}
             />
           </p>
+          <p>URL: 
+          <TextField 
+            name="url"
+            hintText="Enter URL" 
+            onChange={this.handleUrlUpdate} 
+            value={this.setState.url} 
+          />
+        </p>
 
           <RaisedButton
             containerElement={<Link to="/employer-dash" />}

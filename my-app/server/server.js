@@ -2,9 +2,9 @@ const express = require('express');
 const bodyParser = require('body-parser');
 // const MongoClient = require('mongodb');
 
-const {Job} = require('./models/Jobs.js');
-const {Employer} = require('./models/Employers.js');
-const {Student} = require('./models/Students.js');
+const {Job} = require('./models/Jobs');
+const {Employer} = require('./models/Employers');
+const {Student} = require('./models/Students');
 const {mongoose} = require('mongoose');
 
 const port = process.env.PORT || 3001;

@@ -1,27 +1,42 @@
 var mongoose = require('mongoose');
 
 var Job = mongoose.model('Job', {
-  title: {
+  // not sure what to do with _id just yet
+  _id: {
+    type: String,
+    require: false
+  },    
+  jobTitle: {
     type: String,
     required: true,
     trim: true
   },
-  description: {
+  companyName: {
     type: String,
     required: true,
     trim: true
   },
-  location: {
+  jobDescription: {
     type: String,
     required: true,
     trim: true
   },
-  requiredSkills: {
+  skills: {
     type: [String]
   },
   time: {
     type : Date,
     default: Date.now
+  },
+  location: {
+    type: String,
+    required: true,
+    trim: true 
+  },
+  url: {
+    type: String,
+    required: true,
+    trim: true
   }
 });
 
