@@ -1,8 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const MongoClient = require('mongodb');
+// const MongoClient = require('mongodb');
 
-const {ObjectID} = require('mongodb');
 const {Job} = require('./models/Jobs.js');
 const {Employer} = require('./models/Employers.js');
 const {Student} = require('./models/Students.js');
@@ -41,6 +40,21 @@ app.post('/student-signup', (req, res) => {
   });
 });
 
+// pppppp
+
+app.post('/employer/signup', (req, res) => {
+  var employerSignup = new Employer(req.body);
+  console.log(req.body);
+  employerSignup.save()
+  .then(data => {
+    res.json(data);
+  })
+  .catch(err => {
+    res.json({code:400, message:"Employer signup failed", error: err});
+  });
+});
+
+// pppppp
 
 app.get('/login', (req, res) => {});
 
