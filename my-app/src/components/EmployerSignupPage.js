@@ -83,6 +83,7 @@ class EmployerSignupPage extends React.Component {
         <EmployerHeader />
         <h1>EmployerSignupPage.js</h1>
         <h2>Tell us a little about yourself...</h2>
+
         <p>Company logo:
         		<FloatingActionButton mini={true} style={style}>
             <ContentAdd />
@@ -90,61 +91,83 @@ class EmployerSignupPage extends React.Component {
         </p>
 
         <form onSubmit={this.handleSubmit}>
-
-        <p>First Name:
+        
+        <p>
           <TextField
-            name="firstName"
-            hintText="First name"
-            onChange={this.handleFirstNameChange}
+            name='companyName'
+            type='text'
+            floatingLabelText='Company name'
+            hintText='...type your company name'
+            value={this.setState.companyName}
+            onChange={this.handleCompanyNameChange}            
+          />
+        </p>
+
+        <p>
+          <TextField
+            name='firstName'
+            type='text'
+            floatingLabelText='First name'
+            hintText='...type your first name'
             value={this.setState.firstName}
+            onChange={this.handleFirstNameChange}            
           />
         </p>
-        <p>Last Name: 
-          <TextField 
-            name="lastName"
-            hintText="Last name" 
-            onChange={this.handleLastNameChange} 
-            value={this.setState.lastName} 
+
+        <p>
+          <TextField
+            name='lastName'
+            type='text'
+            floatingLabelText='Last name'
+            hintText='...type your last name'
+            value={this.setState.lastName}
+            onChange={this.handleLastNameChange}            
           />
         </p>
-        <p>Company Name: 
-          <TextField 
-            name="companyName"
-            hintText="Enter company name" 
-            onChange={this.handleCompanyNameChange} 
-            value={this.setState.companyName} 
+        
+        <p>
+          <TextField
+            name='email'
+            type='text'
+            floatingLabelText='Email'
+            hintText='...type your ACC email address'
+            value={this.setState.email}
+            onChange={this.handleEmailChange}            
           />
         </p>
-        <p>Email: 
-          <TextField 
-            name="email"
-            hintText="Must use ACC email" 
-            onChange={this.handleEmailChange} 
-            value={this.setState.email} 
+
+        <p>
+          <TextField
+            name='password'
+            type='text'
+            floatingLabelText='Password'
+            hintText='...create a password'
+            value={this.setState.password}
+            onChange={this.handlePasswordChange}            
           />
         </p>
-        <p>Password: 
-          <TextField 
-            name="password"
-            hintText="Password requirements go here" 
-            onChange={this.handlePasswordChange} 
-            value={this.setState.password} 
+
+        <p>
+          <TextField
+            // updated this textfield to match password above 
+            // this field is not saving data, only validating against password
+            name='password'
+            type='text'
+            floatingLabelText='Retype password'
+            hintText='...re-enter password for verification'
+            value={this.setState.password}
+            onChange={this.handlePasswordChange}
           />
         </p>
-        <p>Re-type password: 
-          <TextField 
-            name="retypePassword"
-            hintText="Re-enter password for veriication" 
-            onChange={this.handleRetypePasswordChange} 
-            value={this.setState.retypePassword} 
-          />
-        </p>
-        <p>URL: 
-          <TextField 
-            name="url"
-            hintText="Enter URL" 
-            onChange={this.handleUrlChange} 
-            value={this.setState.url} 
+
+        <p>
+          <TextField
+            name='url'
+            type='text'
+            floatingLabelText='Company URL'
+            hintText='...enter company URL'
+            value={this.setState.url}
+            onChange={this.handleUrlChange}            
           />
         </p>
 
