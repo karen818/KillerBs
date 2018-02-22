@@ -55,7 +55,7 @@ class LoginPage extends React.Component {
             style={style}
             hintText='...ACC email required'
             //value needs a closer look
-            value={this.setState.email}
+            value={this.state.email}
             onChange={this.handleEmailChange}
           />
         </p>
@@ -67,7 +67,7 @@ class LoginPage extends React.Component {
             floatingLabelText='Password'
             style={style}
             hintText='...enter password here'            
-            value={this.setState.password}
+            value={this.state.password}
             onChange={this.handlePasswordChange}
           />
         </p>

@@ -2,10 +2,10 @@ const express = require('express');
 const bodyParser = require('body-parser');
 // const MongoClient = require('mongodb');
 
-const {Job} = require('./models/Jobs');
-const {Employer} = require('./models/Employers');
-const {Student} = require('./models/Students');
-const {mongoose} = require('mongoose');
+const { Job } = require('./models/Jobs');
+const Employer = require('./models/Employers');
+const { Student } = require('./models/Students');
+const mongoose = require('mongoose');
 
 const port = process.env.PORT || 3001;
 const app = express();
@@ -32,31 +32,41 @@ console.log("mLab is working");
 app.post('/student-signup', (req, res) => {
   var studentSignup = new Signup(req.body);
   studentSignup.save()
-  .then(item => {
-    res.send('New sign in saved');
-  })
-  .catch(err => {
-    res.status(400).send('unable to save data');
-  });
+    .then(item => {
+      res.send('New sign in saved');
+    })
+    .catch(err => {
+      res.status(400).send('unable to save data');
+    });
 });
 
 // pppppp
 
 app.post('/employer/signup', (req, res) => {
-  var employerSignup = new Employer(req.body);
-  console.log(req.body);
-  employerSignup.save()
-  .then(data => {
-    res.json(data);
-  })
-  .catch(err => {
-    res.json({code:400, message:"Employer signup failed", error: err});
-  });
+  // var employerSignup = new Employer(req.body);
+  // console.log(req.body);
+  Employer.create(
+    {
+      companyName: req.body.companyName,
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
+      email: req.body.email,
+      password: req.body.password,
+      url: req.body.url
+    }
+  )
+    .then(data => {
+      console.log('Data returned from Employer signup ', data);
+      res.json(data);
+    })
+    .catch(err => {
+      res.json({ code: 400, message: "Employer signup failed", error: err });
+    });
 });
 
 // pppppp
 
-app.get('/login', (req, res) => {});
+app.get('/login', (req, res) => { });
 
 app.post('/login', (req, res) => {
   var newLogin = req.body;
@@ -68,7 +78,7 @@ app.post('/login', (req, res) => {
 
   db.collection(Students).insertOne(newLogin, (err, doc) => {
     if (err) {
-        handleError(res, err.message, "Failed to create new contact.");
+      handleError(res, err.message, "Failed to create new contact.");
     } else {
       res.status(201).json(doc.ops[0]);
 
@@ -76,11 +86,11 @@ app.post('/login', (req, res) => {
   });
 });
 
-app.get('/student/login/:id', (req, res) => {});
+app.get('/student/login/:id', (req, res) => { });
 
-app.put('/student/login/:id', (req, res) => {});
+app.put('/student/login/:id', (req, res) => { });
 
-app.delete('/student/login/:id', (req, res) => {});
+app.delete('/student/login/:id', (req, res) => { });
 
 
 

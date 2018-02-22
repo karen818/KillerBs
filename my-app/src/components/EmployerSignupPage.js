@@ -98,7 +98,7 @@ class EmployerSignupPage extends React.Component {
             type='text'
             floatingLabelText='Company name'
             hintText='...type your company name'
-            value={this.setState.companyName}
+            value={this.state.companyName}
             onChange={this.handleCompanyNameChange}            
           />
         </p>
@@ -109,7 +109,7 @@ class EmployerSignupPage extends React.Component {
             type='text'
             floatingLabelText='First name'
             hintText='...type your first name'
-            value={this.setState.firstName}
+            value={this.state.firstName}
             onChange={this.handleFirstNameChange}            
           />
         </p>
@@ -120,7 +120,7 @@ class EmployerSignupPage extends React.Component {
             type='text'
             floatingLabelText='Last name'
             hintText='...type your last name'
-            value={this.setState.lastName}
+            value={this.state.lastName}
             onChange={this.handleLastNameChange}            
           />
         </p>
@@ -131,7 +131,7 @@ class EmployerSignupPage extends React.Component {
             type='text'
             floatingLabelText='Email'
             hintText='...type your ACC email address'
-            value={this.setState.email}
+            value={this.state.email}
             onChange={this.handleEmailChange}            
           />
         </p>
@@ -142,7 +142,7 @@ class EmployerSignupPage extends React.Component {
             type='text'
             floatingLabelText='Password'
             hintText='...create a password'
-            value={this.setState.password}
+            value={this.state.password}
             onChange={this.handlePasswordChange}            
           />
         </p>
@@ -155,7 +155,7 @@ class EmployerSignupPage extends React.Component {
             type='text'
             floatingLabelText='Retype password'
             hintText='...re-enter password for verification'
-            value={this.setState.password}
+            value={this.state.password}
             onChange={this.handlePasswordChange}
           />
         </p>
@@ -166,7 +166,7 @@ class EmployerSignupPage extends React.Component {
             type='text'
             floatingLabelText='Company URL'
             hintText='...enter company URL'
-            value={this.setState.url}
+            value={this.state.url}
             onChange={this.handleUrlChange}            
           />
         </p>

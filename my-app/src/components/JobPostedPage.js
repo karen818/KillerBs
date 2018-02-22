@@ -102,6 +102,7 @@ class JobPostedPage extends React.Component {
 	        <CardActions>
 	          <FlatButton label="Apply" primary={true} hoverColor="#212121" rippleColor="#FFE082"  />
 	          <FlatButton label="Favorite" secondary={true} hoverColor="#212121" rippleColor="#FFE082"  />
+						{/* ADD EDIT POST BUTTON WITH ROUTE TO EDITPOSTPAGE */}
 	        </CardActions>
 	      </Card>
 	      </div>
