@@ -59,7 +59,7 @@ class StudentSignUpPage extends React.Component {
               name='firstName'
               type='text'
               floatingLabelText='First Name'              
-              hintText='...type your first name here'
+              hintText='...type your first name'
               value={this.state.value} 
               onChange={this.handleChange} 
             />                       
@@ -70,7 +70,7 @@ class StudentSignUpPage extends React.Component {
               name='lastName'
               type='text'
               floatingLabelText='Last Name'
-              hintText='...type your last name here'                    
+              hintText='...type your last name'                    
               value={this.state.value} 
               onChange={this.handleChange} 
             />                      
@@ -82,7 +82,7 @@ class StudentSignUpPage extends React.Component {
               name='major'
               type='text'
               floatingLabelText='Field of Study'
-              hintText="...type your major here" 
+              hintText="...type your major" 
               value={this.state.value} 
               onChange={this.handleChange} 
             />                        

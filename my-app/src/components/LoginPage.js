@@ -44,26 +44,34 @@ class LoginPage extends React.Component {
     return (
       <div>
         <h1>Find A Job!</h1>
+      
+        <form onSubmit={this.handleSubmit}>
 
-      <form onSubmit={this.handleSubmit}>
-
-        <div>Email:
-          <TextField style={style}
-            hintText="Must use ACC email"
-            name="email"
+        <p>
+          <TextField 
+            name='email'
+            type='text'
+            floatingLabelText='Email Address'
+            style={style}
+            hintText='...ACC email required'
+            //value needs a closer look
             value={this.setState.email}
             onChange={this.handleEmailChange}
           />
-        </div>
-        <br />
-        <div>Password:
-          <TextField style={style}
-            hintText="Enter password here"
-            name="password"
+        </p>
+        
+        <p>
+          <TextField 
+            name='password'
+            type='text'
+            floatingLabelText='Password'
+            style={style}
+            hintText='...enter password here'            
             value={this.setState.password}
             onChange={this.handlePasswordChange}
           />
-        </div>
+        </p>
+        
         <a href="#">forgot password?</a>
         <br />
         <RaisedButton 
