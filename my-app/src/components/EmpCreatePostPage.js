@@ -76,7 +76,7 @@ class EmpCreatePostPage extends React.Component {
         		hintText="...enter job title..."
 						fullWidth={true}
 						onChange={this.handleJobTitleChange}
-            value={this.setState.jobTitle}
+            value={this.state.jobTitle}
         	/>
         </p>
 
@@ -89,7 +89,7 @@ class EmpCreatePostPage extends React.Component {
 			      rows={2}
 						fullWidth={true}
 						onChange={this.handleCompanyNameChange}
-            value={this.setState.companyName}
+            value={this.state.companyName}
 			    />
     		</p>
         
@@ -102,7 +102,7 @@ class EmpCreatePostPage extends React.Component {
 			      rows={2}
 						fullWidth={true}
 						onChange={this.handleJobDescriptionChange}
-            value={this.setState.jobDescription}
+            value={this.state.jobDescription}
 			    />
     		</p>
 
@@ -112,7 +112,7 @@ class EmpCreatePostPage extends React.Component {
     				hintText="...enter job requirements..."
 						fullWidth={true}
 						onChange={this.handleSkillsChange}
-            value={this.setState.skills}
+            value={this.state.skills}
     			/>
     		</p>
         <p>Company URL: 
@@ -121,7 +121,7 @@ class EmpCreatePostPage extends React.Component {
         		hintText="...enter URL..."
 						fullWidth={true}
 						onChange={this.handleUrlChange}
-            value={this.setState.url}
+            value={this.state.url}
         	/>
         </p>
 				<p>Location: 
@@ -130,7 +130,7 @@ class EmpCreatePostPage extends React.Component {
         		hintText="...enter location..."
 						fullWidth={true}
 						onChange={this.handleLocationChange}
-            value={this.setState.location}
+            value={this.state.location}
         	/>
         </p>
 				<RaisedButton 

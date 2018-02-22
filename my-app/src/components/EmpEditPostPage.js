@@ -75,7 +75,7 @@ class EmpEditPostPage extends React.Component {
         		hintText="...edit job title..."
 						fullWidth={true}
 						onChange={this.handleJobTitleUpdate}
-            value={this.setState.jobTitle}
+            value={this.state.jobTitle}
         	/>
         </p>
 
@@ -88,7 +88,7 @@ class EmpEditPostPage extends React.Component {
 			      rows={2}
 						fullWidth={true}
 						onChange={this.handleCompanyNameUpdate}
-            value={this.setState.companyName}
+            value={this.state.companyName}
 			    />
     		</p>
         
@@ -101,7 +101,7 @@ class EmpEditPostPage extends React.Component {
 			      rows={2}
 						fullWidth={true}
 						onChange={this.handleJobDescriptionUpdate}
-            value={this.setState.jobDescription}
+            value={this.state.jobDescription}
 			    />
     		</p>
 
@@ -111,7 +111,7 @@ class EmpEditPostPage extends React.Component {
     				hintText="...edit job requirements..."
 						fullWidth={true}
 						onChange={this.handleSkillsUpdate}
-            value={this.setState.skills}
+            value={this.state.skills}
     			/>
     		</p>
         <p>Company URL: 
@@ -120,7 +120,7 @@ class EmpEditPostPage extends React.Component {
         		hintText="...edit URL..."
 						fullWidth={true}
 						onChange={this.handleUrlUpdate}
-            value={this.setState.url}
+            value={this.state.url}
         	/>
         </p>
 
@@ -130,7 +130,7 @@ class EmpEditPostPage extends React.Component {
         		hintText="...enter location..."
 						fullWidth={true}
 						onChange={this.handleLocationUpdate}
-            value={this.setState.location}
+            value={this.state.location}
         	/>
         </p>
 
