@@ -32,6 +32,8 @@ app.post('/student-signup', (req, res) => {
     });
 });
 
+// important example -------------------------------------------------------
+
 app.post('/employer/signup', (req, res) => {
   Employer.create(
     {
@@ -52,7 +54,7 @@ app.post('/employer/signup', (req, res) => {
     });
 });
 
-// pppppp
+// important example -------------------------------------------------------
 
 app.get('/login', (req, res) => { });
 

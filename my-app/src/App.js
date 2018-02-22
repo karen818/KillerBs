@@ -24,6 +24,7 @@ import StudentViewPost from './components/StudentViewPost';
 
 class App extends Component {
   render() {
+
     return (
       <div className="App">
 

@@ -7,6 +7,8 @@ import ContentAdd from 'material-ui/svg-icons/content/add';
 import EmployerHeader from './EmployerHeader';
 import { Link } from 'react-router-dom';
 
+import { submitSignup } from '../actions/employerActions';
+
 const style = {
   margin: 12,
 };
@@ -37,16 +39,18 @@ class EmployerSignupPage extends React.Component {
   }
 
   handleSubmit(event) {
-    alert('EmployerSignupPage --> '
-      + this.state.firstName + ' | '
-      + this.state.lastName + ' | '
-      + this.state.companyName + ' | '
-      + this.state.email + ' | '
-      + this.state.password + ' | '
-      + this.state.retypePassword + ' | ' 
-      + this.state.url + '.'
-    );
+    // alert('EmployerSignupPage --> '
+    //   + this.state.firstName + ' | '
+    //   + this.state.lastName + ' | '
+    //   + this.state.companyName + ' | '
+    //   + this.state.email + ' | '
+    //   + this.state.password + ' | '
+    //   + this.state.retypePassword + ' | ' 
+    //   + this.state.url + '.'
+    // );
     event.preventDefault();
+
+    submitSignup(this.state);
   }
 
   handleFirstNameChange(event) {
@@ -128,7 +132,7 @@ class EmployerSignupPage extends React.Component {
         <p>
           <TextField
             name='email'
-            type='text'
+            type='email'
             floatingLabelText='Email'
             hintText='...type your ACC email address'
             value={this.state.email}
@@ -139,7 +143,7 @@ class EmployerSignupPage extends React.Component {
         <p>
           <TextField
             name='password'
-            type='text'
+            type='password'
             floatingLabelText='Password'
             hintText='...create a password'
             value={this.state.password}
@@ -151,12 +155,12 @@ class EmployerSignupPage extends React.Component {
           <TextField
             // updated this textfield to match password above 
             // this field is not saving data, only validating against password
-            name='password'
-            type='text'
+            name='retypePassword'
+            type='password'
             floatingLabelText='Retype password'
             hintText='...re-enter password for verification'
-            value={this.state.password}
-            onChange={this.handlePasswordChange}
+            value={this.state.retypePassword}
+            onChange={this.handleRetypePasswordChange}
           />
         </p>
 

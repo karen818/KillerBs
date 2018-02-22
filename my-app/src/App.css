@@ -10,10 +10,3 @@ body {
   margin: 0 auto;
 }
 
-.footer-bottom {
-  position: relative; /* change back to 'absolute' ? */
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-
