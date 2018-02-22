@@ -1,9 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-// const MongoClient = require('mongodb');
 
 const { Job } = require('./models/Jobs');
-const Employer = require('./models/Employers');
+const EmployerSchema = require('./models/Employers');
 const { Student } = require('./models/Students');
 const mongoose = require('mongoose');
 
@@ -11,23 +10,16 @@ const port = process.env.PORT || 3001;
 const app = express();
 
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}));
 
 var url = 'mongodb://jason.jiron:milkshake8@ds225078.mlab.com:25078/killerbs';
-console.log("mLab is working");
 
+mongoose.connect(url, function (err) {
+    if (err) throw err;
+    console.log('Successfully connected to mLab Mongo db');
+});
 
-////////////////////////////////////////////////////////////////
-
-// MongoClient.connect(url, (err, db) => {
-//   if(err) throw err;
-//   var dbo = db.db("killerbs")
-//   var myobj = {firstName:"Jason", lastName:"Jiron", email:"bad@code.net", password:"000"};
-//   dbo.collection("Students").insertOne(myobj, (err, res) => {
-//     if (err) throw err;
-//     console.log("test insert worked");
-//     db.close();
-//   });
-// });
+const Employer = mongoose.model('Employer', EmployerSchema);
 
 app.post('/student-signup', (req, res) => {
   var studentSignup = new Signup(req.body);
@@ -40,11 +32,7 @@ app.post('/student-signup', (req, res) => {
     });
 });
 
-// pppppp
-
 app.post('/employer/signup', (req, res) => {
-  // var employerSignup = new Employer(req.body);
-  // console.log(req.body);
   Employer.create(
     {
       companyName: req.body.companyName,
