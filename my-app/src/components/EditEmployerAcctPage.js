@@ -117,6 +117,7 @@ class EditEmployerAcctPage extends React.Component {
           <p>Email:
             <TextField
               name="email"
+              type="email"
               hintText="Must use ACC email"
               onChange={this.handleEmailUpdate}
               value={this.state.email}
@@ -125,6 +126,7 @@ class EditEmployerAcctPage extends React.Component {
           <p>Password:
             <TextField
               name="password"
+              type="password"
               hintText="Password requirements go here"
               onChange={this.handlePasswordUpdate}
               value={this.state.password}
@@ -133,6 +135,7 @@ class EditEmployerAcctPage extends React.Component {
           <p>Re-type password:
             <TextField
               name="retypePassword"
+              type="password"
               hintText="Re-enter password for veriication"
               onChange={this.handleRetypePasswordUpdate}
               value={this.state.retypePassword}

@@ -12,7 +12,20 @@ export const submitSignup = (data) => {
   }).then(res => {
     return res;
   }).catch(err => err);
-};
+}; 
+
+// export const submitSignup = (data) => {
+//   return fetch(`/employer/signup?companyName=${companyName}&amp;firstName=${firstName}&amp;lastName=${lastName}&amp;email=${email}&amp;password=${password}&amp;retypePassword=${retypePassword}&amp;url=${url}`, {
+//     method: 'POST',
+//     mode: 'CORS',
+//     body: JSON.stringify(data),
+//     headers: {
+//       'Content-Type': 'application/x-www-form-urlencoded'
+//     }
+//   }).then(res => {
+//     return res;
+//   }).catch(err => err);
+// };
 
 
 

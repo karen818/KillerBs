@@ -10,43 +10,87 @@ import { Link } from 'react-router-dom';
 const style = {
   margin: 12,
 };
+
 class StudentSignUpPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       firstName: '',
       lastName: '',
-      major: '',
-      skills: '',
       email: '',
-      password: ''
+      password: '',
+      retypePassword: '',
+      fieldOfStudy: '',
+      skills: ''
     };
-    this.handleChange = this.handleChange.bind(this);
+
     this.handleSubmit = this.handleSubmit.bind(this);
+
+    this.handleFirstNameChange = this.handleFirstNameChange.bind(this);
+    this.handleLastNameChange = this.handleLastNameChange.bind(this);
+    this.handleEmailChange = this.handleEmailChange.bind(this);
+    this.handlePasswordChange = this.handlePasswordChange.bind(this);
+    this.handleRetypePasswordChange = this.handleRetypePasswordChange.bind(this);
+    this.handleFieldOfStudyChange = this.handleFieldOfStudyChange.bind(this);
+    this.handleSkillsChange = this.handleSkillsChange.bind(this);
+
   }
-  
-  handleChange(event) {
-    //handles when text values in form are updated
-    this.setState({value: event.target.value});
-  }
+
   handleSubmit(event) {
-    
+    alert('STUDENTsignupPage --> '
+      + this.state.firstName + ' | '
+      + this.state.lastName + ' | '
+      + this.state.email + ' | '
+      + this.state.password + ' | '
+      + this.state.retypePassword + ' | ' 
+      + this.state.fieldOfStudy + ' | '
+      + this.state.skills + ' |'
+    );
     event.preventDefault();
-
-    const data = new FormData(event.target);
-
-    fetch('http://localhost:3000/api/data',{
-      method: 'POST',
-      body: data
-    })
-    .then(res => {
-      console.log('You clicked the submit button! Here is the response ' + res)
-    })
-    .catch(err => {
-      console.log(err)
-    });
-
   }
+
+  handleFirstNameChange(event) {
+    this.setState({firstName: event.target.value});
+  }
+
+  handleLastNameChange(event) {
+    this.setState({lastName: event.target.value});
+  }
+
+  handleEmailChange(event) {
+    this.setState({email: event.target.value});
+  }
+
+  handlePasswordChange(event) {
+    this.setState({password: event.target.value});
+  }
+
+  handleRetypePasswordChange(event) {
+    this.setState({retypePassword: event.target.value});
+  }
+
+  handleFieldOfStudyChange(event) {
+    this.setState({fieldOfStudy: event.target.value});
+  }
+
+  handleSkillsChange(event) {
+    this.setState({skills: event.target.value});
+  }
+
+    // const data = new FormData(event.target);
+
+    // fetch('http://localhost:3000/api/data',{
+    //   method: 'POST',
+    //   body: data
+    // })
+    // .then(res => {
+    //   console.log('You clicked the submit button! Here is the response ' + res)
+    // })
+    // .catch(err => {
+    //   console.log(err)
+    // });
+
+  
   render() {
     return (
       <div>
@@ -60,8 +104,8 @@ class StudentSignUpPage extends React.Component {
               type='text'
               floatingLabelText='First Name'              
               hintText='...type your first name'
-              value={this.state.value} 
-              onChange={this.handleChange} 
+              value={this.state.firstName}
+              onChange={this.handleFirstNameChange} 
             />                       
           </p>
 
@@ -71,8 +115,43 @@ class StudentSignUpPage extends React.Component {
               type='text'
               floatingLabelText='Last Name'
               hintText='...type your last name'                    
-              value={this.state.value} 
-              onChange={this.handleChange} 
+              value={this.state.lastName}
+              onChange={this.handleLastNameChange} 
+            />                      
+          </p>
+
+          <p>                      
+            <TextField 
+              name='email'
+              type='email'
+              floatingLabelText='Email address'
+              hintText='...type your email address'
+              value={this.state.email} 
+              onChange={this.handleEmailChange} 
+            />                      
+          </p>  
+
+          <p>                 
+            <TextField 
+              name='password'
+              type='password'
+              floatingLabelText='Create a password'
+              type='password'
+              hintText="...create a password" 
+              value={this.state.password} 
+              onChange={this.handlePasswordChange} 
+            />                      
+          </p>  
+            
+          <p>                     
+            <TextField 
+              name='password'
+              type='password'
+              floatingLabelText='Re-enter password'
+              type='password'
+              hintText='...re-enter password for verification' 
+              value={this.state.retypePassword} 
+              onChange={this.handleRetypePasswordChange} 
             />                      
           </p>
 
@@ -83,8 +162,8 @@ class StudentSignUpPage extends React.Component {
               type='text'
               floatingLabelText='Field of Study'
               hintText="...type your major" 
-              value={this.state.value} 
-              onChange={this.handleChange} 
+              value={this.state.fieldOfStudy} 
+              onChange={this.handleFieldOfStudyChange} 
             />                        
           </p>
 
@@ -98,44 +177,9 @@ class StudentSignUpPage extends React.Component {
               multiLine={false}
               //rows={2}
               fullWidth={false}
-              value={this.state.value} 
-              onChange={this.handleChange} 
+              value={this.state.skills} 
+              onChange={this.handleSkillsChange} 
             />                         
-          </p>
-
-          <p>                      
-            <TextField 
-              name='email'
-              type='text'
-              floatingLabelText='Email address'
-              hintText='...type your email address'
-              value={this.state.value} 
-              onChange={this.handleChange} 
-            />                      
-          </p>  
-
-          <p>                 
-            <TextField 
-              name='password'
-              type='text'
-              floatingLabelText='Create a password'
-              type='password'
-              hintText="...create a password" 
-              value={this.state.value} 
-              onChange={this.handleChange} 
-            />                      
-          </p>  
-            
-          <p>                     
-            <TextField 
-              name='password'
-              type='text'
-              floatingLabelText='Re-enter password'
-              type='password'
-              hintText='...re-enter password for verification' 
-              value={this.state.value} 
-              onChange={this.handleChange} 
-            />                      
           </p>
 
             <RaisedButton 

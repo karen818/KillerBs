@@ -63,7 +63,7 @@ class LoginPage extends React.Component {
         <p>
           <TextField 
             name='password'
-            type='text'
+            type='password'
             floatingLabelText='Password'
             style={style}
             hintText='...enter password here'            
@@ -89,7 +89,7 @@ class LoginPage extends React.Component {
           style={style} 
         />
         <RaisedButton 
-          containerElement={<Link to="/employer-signup" />} 
+          containerElement={<Link to="/employer/signup" />} 
           label="Employer" 
           primary={true} 
           style={style} 

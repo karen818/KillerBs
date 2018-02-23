@@ -9,6 +9,8 @@ import { Link } from 'react-router-dom';
 
 import { submitSignup } from '../actions/employerActions';
 
+// import axios from 'axios';
+
 const style = {
   margin: 12,
 };
@@ -51,6 +53,8 @@ class EmployerSignupPage extends React.Component {
     event.preventDefault();
 
     submitSignup(this.state);
+
+  //   axios.post('/employer/signup', { })
   }
 
   handleFirstNameChange(event) {
@@ -94,7 +98,7 @@ class EmployerSignupPage extends React.Component {
           </FloatingActionButton>
         </p>
 
-        <form onSubmit={this.handleSubmit}>
+        <form  onSubmit={this.handleSubmit}>
         
         <p>
           <TextField

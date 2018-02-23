@@ -28,7 +28,8 @@ class App extends Component {
     return (
       <div className="App">
 
-        <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
+        {/* <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}> */}
+        <MuiThemeProvider>
 
           <Switch>
             <Route exact path="/" component={LoginPage} />
@@ -36,7 +37,7 @@ class App extends Component {
             <Route path="/student-signup" component={StudentSignupPage} />
             <Route path="/edit-student-acct" component={EditStudentAcctPage} />
             <Route path="/employer-dash" component={EmployerDashboardPage} />
-            <Route path="/employer-signup" component={EmployerSignupPage} />
+            <Route path="/employer/signup" component={EmployerSignupPage} />
             <Route path="/edit-employer-acct" component={EditEmployerAcctPage} />
             <Route path="/job-posted" component={JobPostedPage} />
             <Route path="/view-post" component={StudentViewPost} />
