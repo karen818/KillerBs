@@ -99,7 +99,7 @@ class JobPostedPage extends React.Component {
 			          		</div>
 							</CardText>
 							<FlatButton
-								containerElement={<Link to="/edit-job-post" />}
+								containerElement={<Link to="/edit/job/post" />}
 								label="Edit Post"
 								primary={true}
 								hoverColor="#212121"

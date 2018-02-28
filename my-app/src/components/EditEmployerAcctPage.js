@@ -151,7 +151,7 @@ class EditEmployerAcctPage extends React.Component {
         </p>
 
           <RaisedButton
-            containerElement={<Link to="/employer-dash" />}
+            containerElement={<Link to="/employer/dash" />}
             label="Cancel"
             primary={true}
             style={style} 

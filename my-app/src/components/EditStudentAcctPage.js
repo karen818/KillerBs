@@ -160,7 +160,7 @@ class EditStudentAcctPage extends React.Component {
         </p>
       
         <RaisedButton 
-          containerElement={<Link to="/student-dash" />} 
+          containerElement={<Link to="/student/dash" />} 
           label="Cancel" 
           primary={true} 
           style={style} 

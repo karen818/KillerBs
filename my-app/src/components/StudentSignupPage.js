@@ -189,7 +189,7 @@ class StudentSignUpPage extends React.Component {
               type='submit'
               onSubmit={this.handleSubmit}/>
             <RaisedButton 
-              containerElement={<Link to="/student-dash" />}  
+              containerElement={<Link to="/" />}  
               label="Cancel" 
               secondary={true} 
               style={style} 

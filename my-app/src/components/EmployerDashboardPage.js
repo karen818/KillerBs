@@ -77,7 +77,7 @@ export default class EmployerDashboardPage extends React.Component {
           <CardTitle title="Jobs you've posted" subtitle="" expandable={true} />
           <CardText expandable={true}>
             <RaisedButton 
-              containerElement={<Link to="/create-post" />}
+              containerElement={<Link to="/create/post" />}
               label="Create New Job Post" 
               secondary={true} 
               style={style} 
@@ -101,7 +101,7 @@ export default class EmployerDashboardPage extends React.Component {
             <FlatButton label="Expand" onClick={this.handleExpand} />
             <FlatButton label="Reduce" onClick={this.handleReduce} />
             <RaisedButton 
-              containerElement={<Link to="/edit-employer-acct" />}
+              containerElement={<Link to="/edit/employer/acct" />}
               label="Edit/Update Profile" 
               secondary={true} 
               style={style} 
