@@ -112,7 +112,7 @@ class DashStudentPage extends React.Component {
           </TableBody>
         </Table>
           <RaisedButton 
-            containerElement={<Link to="/edit-student-acct" />}
+            containerElement={<Link to="/edit/student/acct" />}
             label="Edit" 
             primary={false} 
             style={buttonStyle} 

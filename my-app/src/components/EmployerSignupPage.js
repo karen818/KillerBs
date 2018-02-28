@@ -186,7 +186,7 @@ class EmployerSignupPage extends React.Component {
           type="submit"
         />
         <RaisedButton
-          containerElement={<Link to="/employer-dash" />}
+          containerElement={<Link to="/" />}
           label="Cancel"
           secondary={true}
           style={style}

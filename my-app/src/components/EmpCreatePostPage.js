@@ -140,7 +140,7 @@ class EmpCreatePostPage extends React.Component {
 					type="submit"
 				/>
 				<RaisedButton 
-					containerElement={<Link to="/employer-dash" />}
+					containerElement={<Link to="/employer/dash" />}
 					label="Cancel" 
 					secondary={true} 
 					fullWidth={true} 

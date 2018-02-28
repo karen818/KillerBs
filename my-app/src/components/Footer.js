@@ -23,16 +23,9 @@ class Footer extends Component {
   select = (index) => this.setState({selectedIndex: index});
 
   render() {
-    const style = {
-      height: '60px',
-      position: 'static',
-      bottom: 0,
-      left: 0,
-      right: 0
-    }
     return (
-      <Paper zDepth={1}>
-        <BottomNavigation style={style}>
+      <Paper zDepth={1} className="footer">
+        <BottomNavigation>
           <BottomNavigationItem
             label="Help"
             icon={helpIcon}

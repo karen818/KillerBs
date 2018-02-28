@@ -83,7 +83,7 @@ class LoginPage extends React.Component {
         <Divider />
         <h3>Sign up</h3>
         <RaisedButton 
-          containerElement={<Link to="/student-signup" />} 
+          containerElement={<Link to="/student/signup" />} 
           label="Student" 
           primary={true} 
           style={style} 
