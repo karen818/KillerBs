@@ -24,7 +24,7 @@ class Footer extends Component {
 
   render() {
     return (
-      <Paper zDepth={1} className="footer">
+      <Paper zDepth={1} className="Footer">
         <BottomNavigation>
           <BottomNavigationItem
             label="Help"

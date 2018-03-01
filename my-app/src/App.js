@@ -43,10 +43,13 @@ class App extends Component {
             <Route path="/edit/job/post" component={EmpEditPostPage} />
             <Route path="/create/post" component={EmpCreatePostPage} />
           </Switch>
-    
+
           {/* <Footer /> */}
 
+
+
         </MuiThemeProvider>
+        
       </div>
     );
   }

@@ -19,13 +19,13 @@ class EmployerSignupPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      firstName: '',
-      lastName: '',
-      companyName: '',
-      email: '',
-      password: '',
-      retypePassword: '',
-      url: ''
+      firstName: 'firstName',
+      lastName: 'lastName',
+      companyName: 'companyName',
+      email: 'email@gmail.com',
+      password: 'password',
+      retypePassword: 'retypePassword',
+      url: 'www.url.com'
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -107,7 +107,7 @@ class EmployerSignupPage extends React.Component {
             floatingLabelText='Company name'
             hintText='...type your company name'
             value={this.state.companyName}
-            onChange={this.handleCompanyNameChange}            
+            onChange={this.handleCompanyNameChange}          
           />
         </p>
 
@@ -175,7 +175,7 @@ class EmployerSignupPage extends React.Component {
             floatingLabelText='Company URL'
             hintText='...enter company URL'
             value={this.state.url}
-            onChange={this.handleUrlChange}            
+            onChange={this.handleUrlChange}  
           />
         </p>
 
