@@ -2,7 +2,7 @@
 
 
 export const submitSignup = (data) => {
-  return fetch('/employer/signup', {
+  return fetch('http://localhost:3001/employer/signup', {
     method: 'POST',
     mode: 'CORS',
     body: JSON.stringify(data),
