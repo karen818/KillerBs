@@ -1,8 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 
-const { Job } = require('./models/Jobs');
 const EmployerSchema = require('./models/Employers');
+const JobSchema = require('./models/Jobs');
 const { Student } = require('./models/Students');
 const mongoose = require('mongoose');
 
@@ -28,7 +28,9 @@ mongoose.connect(url, function (err) {
 
 const Employer = mongoose.model('Employer', EmployerSchema);
 
-app.post('/student-signup', (req, res) => {
+const Job = mongoose.model('Job', JobSchema);
+
+app.post('/student/signup', (req, res) => {
   var studentSignup = new Signup(req.body);
   studentSignup.save()
     .then(item => {
@@ -62,6 +64,30 @@ app.post('/employer/signup', (req, res) => {
 });
 
 // important example -------------------------------------------------------
+
+// POST route for EmpCreatePostPage.js below
+
+app.post('/job', (req, res) => {
+  Job.create(
+    {
+      jobTitle: req.body.jobTitle,
+      companyId: req.body.companyId,
+      jobDescription: req.body.jobDescription,
+      skills: req.body.skills,
+      url: req.body.url,
+      location: req.body.location
+    }
+  )
+    .then(data => {
+      console.log('Data returned from Employer Create Job ', data);
+      res.json(data);
+    })
+    .catch(err => {
+      res.json({ code: 400, message: "Employer job post failed", error: err });
+    });
+});
+
+// POST route for EmpCreatePostPage.js above
 
 app.get('/login', (req, res) => { });
 
