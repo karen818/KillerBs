@@ -2,7 +2,6 @@ import React from 'react';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import EmployerHeader from './EmployerHeader';
-import colors from 'material-ui/styles/colors';
 import { Link } from 'react-router-dom';
 import { submitCreateJob } from '../actions/employerActions';
 
@@ -120,45 +119,6 @@ class EmpCreatePostPage extends React.Component {
 					label="Cancel" 
 					secondary={true} 
 					fullWidth={false} 
-				/>
-			</form>
-
-      </div>
-    );
-  }
-}
-
-export default EmpCreatePostPage;   			/>
-    		</p>
-        <p>Company URL: 
-					<TextField 
-						name="url"
-        		hintText="...enter URL..."
-						fullWidth={true}
-						onChange={this.handleUrlChange}
-            value={this.setState.url}
-        	/>
-        </p>
-				<p>Location: 
-					<TextField 
-						name="location"
-        		hintText="...enter location..."
-						fullWidth={true}
-						onChange={this.handleLocationChange}
-            value={this.setState.location}
-        	/>
-        </p>
-				<RaisedButton 
-					label="Submit" 
-					primary={true} 
-					fullWidth={true} 
-					type="submit"
-				/>
-				<RaisedButton 
-					containerElement={<Link to="/employer-dash" />}
-					label="Cancel" 
-					secondary={true} 
-					fullWidth={true} 
 				/>
 			</form>
 
