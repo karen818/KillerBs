@@ -2,7 +2,9 @@ import React from 'react';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import EmployerHeader from './EmployerHeader';
+import colors from 'material-ui/styles/colors';
 import { Link } from 'react-router-dom';
+import { submitCreateJob } from '../actions/employerActions';
 
 class EmpCreatePostPage extends React.Component {
 	constructor(props) {
@@ -15,52 +17,16 @@ class EmpCreatePostPage extends React.Component {
       url: '',
       location: ''
 		};
-		
-		this.handleSubmit = this.handleSubmit.bind(this);
-
-		this.handleJobTitleChange = this.handleJobTitleChange.bind(this);
-		this.handleCompanyNameChange = this.handleCompanyNameChange.bind(this);
-		this.handleJobDescriptionChange = this.handleJobDescriptionChange.bind(this);
-		this.handleSkillsChange = this.handleSkillsChange.bind(this);
-		this.handleUrlChange = this.handleUrlChange.bind(this);
-		this.handleLocationChange = this.handleLocationChange.bind(this);
 	}
 
-	handleSubmit(event) {
-    alert('EmpCreatePostPage --> '
-      + this.state.jobTitle + ' | '
-      + this.state.companyName + ' | '
-      + this.state.jobDescription + ' | '
-      + this.state.skills + ' | '
-      + this.state.url + ' | '
-      + this.state.location + '.'
-    );
+	handleChange = (event) => {
+    this.setState({ [event.target.name]: event.target.value });
+  };
+
+  handleSubmit = (event) => {
     event.preventDefault();
-	}
-	
-	handleJobTitleChange(event) {
-		this.setState({jobTitle: event.target.value});
-	}
-
-	handleCompanyNameChange(event) {
-		this.setState({companyName: event.target.value});
-	}
-
-	handleJobDescriptionChange(event) {
-		this.setState({jobDescription: event.target.value});
-	}
-
-	handleSkillsChange(event) {
-		this.setState({skills: event.target.value});
-	}
-
-	handleUrlChange(event) {
-		this.setState({url: event.target.value});
-	}
-
-	handleLocationChange(event) {
-		this.setState({location: event.target.value});
-	}
+    submitCreateJob(this.state);
+  }
 
   render () {
     return (
@@ -70,50 +36,99 @@ class EmpCreatePostPage extends React.Component {
         <h2>Jorb Creator 9000</h2>
 
 			<form onSubmit={this.handleSubmit}>
-        <p>Job Title: 
+        <p>
 					<TextField 
-						name="jobTitle"
-        		hintText="...enter job title..."
-						fullWidth={true}
-						onChange={this.handleJobTitleChange}
-            value={this.setState.jobTitle}
+						name='jobTitle'
+						type='text'
+						floatingLabelText='Job Title'
+						// floatingLabelFixed={true} allows floatingLabelText to always be displayed
+        		hintText='...enter job title...'
+						fullWidth={false}
+						onChange={this.handleChange}
+            value={this.state.jobTitle}
         	/>
         </p>
 
-				<p>Company Name: 
+				<p> 
         	<TextField
-						name="companyName"
-			      hintText="...enter company name..."
-			      multiLine={true}
-			      // rows={2} allows two rows to be viewed simultaneously 
-			      rows={2}
-						fullWidth={true}
-						onChange={this.handleCompanyNameChange}
-            value={this.setState.companyName}
+						name='companyName'
+						type='text'
+						floatingLabelText='Company Name'
+			      hintText='...enter company name...'
+						fullWidth={false}
+						onChange={this.handleChange}
+            value={this.state.companyName}
 			    />
     		</p>
         
-        <p>Job Description: 
+        <p>
         	<TextField
-						name="jobDescription"
-			      hintText="...enter job description..."
+						name='jobDescription'
+						type='text'
+						style={{textAlign: 'left'}}
+						floatingLabelText='Job Description'
+			      hintText='...enter job description'
 			      multiLine={true}
 			      // rows={2} allows two rows to be viewed simultaneously 
-			      rows={2}
 						fullWidth={true}
-						onChange={this.handleJobDescriptionChange}
-            value={this.setState.jobDescription}
+						onChange={this.handleChange}
+            value={this.state.jobDescription}
 			    />
     		</p>
 
-    		<p>Job Skills/Requirements: 
+    		<p>
 					<TextField 
-						name="skills"
-    				hintText="...enter job requirements..."
+						name='skills'
+						type='text'
+						floatingLabelText='Job Skills/Requirements'
+    				hintText='...enter job requirements...'
 						fullWidth={true}
-						onChange={this.handleSkillsChange}
-            value={this.setState.skills}
+						onChange={this.handleChange}
+            value={this.state.skills}
     			/>
+    		</p>
+        <p> 
+					<TextField 
+						name='url'
+						type='text'
+						floatingLabelText='Company URL'
+        		hintText='...enter URL...'
+						fullWidth={false}
+						onChange={this.handleChange}
+            value={this.state.url}
+        	/>
+        </p>
+				<p>
+					<TextField 
+						name='location'
+						type='text'
+						floatingLabelText='Location'
+        		hintText='...enter location...'
+						fullWidth={false}
+						onChange={this.handleChange}
+            value={this.state.location}
+        	/>
+        </p>
+				<RaisedButton 
+					label="Submit" 
+					primary={true} 
+					fullWidth={false} 
+					type="submit"
+				/>
+				<RaisedButton 
+					containerElement={<Link to="/employer/dash" />}
+					label="Cancel" 
+					secondary={true} 
+					fullWidth={false} 
+				/>
+			</form>
+
+      </div>
+    );
+  }
+}
+
+export default EmpCreatePostPage;   			/>
     		</p>
         <p>Company URL: 
 					<TextField 
