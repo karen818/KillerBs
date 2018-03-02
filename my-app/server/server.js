@@ -1,3 +1,5 @@
+const read = require('fs');
+
 const express = require('express');
 const bodyParser = require('body-parser');
 
@@ -10,9 +12,9 @@ const port = process.env.PORT || 3001;
 const app = express();
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Methods", "GET,PUT,POST,OPTIONS");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
@@ -22,8 +24,8 @@ app.use(function(req, res, next) {
 var url = 'mongodb://jason.jiron:milkshake8@ds225078.mlab.com:25078/killerbs';
 
 mongoose.connect(url, function (err) {
-    if (err) throw err;
-    console.log('Successfully connected to mLab Mongo db');
+  if (err) throw err;
+  console.log('Successfully connected to mLab Mongo db');
 });
 
 const Employer = mongoose.model('Employer', EmployerSchema);
@@ -41,7 +43,7 @@ app.post('/student/signup', (req, res) => {
     });
 });
 
-// important example -------------------------------------------------------
+// employer signup form submit start --------------------------------------------------------
 
 app.post('/employer/signup', (req, res) => {
   Employer.create(
@@ -63,7 +65,44 @@ app.post('/employer/signup', (req, res) => {
     });
 });
 
-// important example -------------------------------------------------------
+// employer signup form submit end / ------------------------------------------------------
+
+
+
+
+// getting employer by id test code
+
+  // app.get to get and see ALL employers in postman
+
+app.get('/employer', (req, res) => {
+  Employer.find((err, employers) => {
+    if (err)
+      res.send(err);
+
+    res.json(employers);
+  });
+});
+
+  // /////////////////
+
+  
+  // get the employer with that id (accessed at GET http://localhost:3001/employer/:employer_id)
+app.get('/employer/:employer_id', (req, res) => {
+  Employer.findById(req.params.employer_id, (err, employer) => {
+    if (err)
+      res.send(err);
+    res.json(employer);
+  });
+});
+// end of test code
+
+// employer update account form PUT ---------------------------------------------------
+
+app.put('/employer/update/:employer_id', (req, res) => {
+
+});
+
+// employer update account form PUT / -------------------------------------------------
 
 // POST route for EmpCreatePostPage.js below
 
@@ -88,6 +127,10 @@ app.post('/job', (req, res) => {
 });
 
 // POST route for EmpCreatePostPage.js above
+
+
+
+// below is unused so far to line 123
 
 app.get('/login', (req, res) => { });
 
@@ -116,7 +159,7 @@ app.put('/student/login/:id', (req, res) => { });
 app.delete('/student/login/:id', (req, res) => { });
 
 
-
+// 
 
 app.listen(port, () => {
   console.log(`Started up at ${port}`);
