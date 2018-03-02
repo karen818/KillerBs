@@ -2,7 +2,6 @@ import React from 'react';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import EmployerHeader from './EmployerHeader';
-import colors from 'material-ui/styles/colors';
 import { Link } from 'react-router-dom';
 import { submitCreateJob } from '../actions/employerActions';
 class EmpCreatePostPage extends React.Component {
