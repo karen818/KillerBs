@@ -72,7 +72,7 @@ app.post('/employer/signup', (req, res) => {
 
 // getting employer by id test code
 
-  // app.get to get and see ALL employers in postman
+// app.get to get and see ALL employers in postman
 
 app.get('/employer', (req, res) => {
   Employer.find((err, employers) => {
@@ -83,10 +83,10 @@ app.get('/employer', (req, res) => {
   });
 });
 
-  // /////////////////
+// /////////////////
 
-  
-  // get the employer with that id (accessed at GET http://localhost:3001/employer/:employer_id)
+
+// get the employer with that id (accessed at GET http://localhost:3001/employer/:employer_id)
 app.get('/employer/:employer_id', (req, res) => {
   Employer.findById(req.params.employer_id, (err, employer) => {
     if (err)
@@ -97,12 +97,45 @@ app.get('/employer/:employer_id', (req, res) => {
 // end of test code
 
 // employer update account form PUT ---------------------------------------------------
+  // be sure to set values in Postman if testing with Postman under the Body tab below the url path bar
 
-app.put('/employer/update/:employer_id', (req, res) => {
+app.put('/employer/:employer_id', (req, res) => {
+  Employer.findById(req.params.employer_id, (err, employer) => {
+  
+    employer.companyName = req.body.companyName;
+    employer.firstName = req.body.firstName;
+    employer.lastName = req.body.lastName;
+    employer.email = req.body.email;
+    employer.password = req.body.password;
+    employer.url = req.body.url; // updating employer info
 
+    // save info
+    employer.save((err) => {
+      if (err)
+        res.send(err);
+
+      res.json({ message: 'Employer account information updated.' });
+    });
+
+  });
 });
 
 // employer update account form PUT / -------------------------------------------------
+
+// employer DELETE account form DELETE / ----------------------------------------------
+
+app.delete('/employer/:employer_id', (req, res) => {
+  Employer.remove({
+    _id: req.params.employer_id
+  }, (err, employer) => {
+    if (err)
+      res.send(err);
+
+    res.json({ message: 'Employer successfully deleted.' });
+  });
+});
+
+// /////    employer DELETE account form DELETE / -------------------------------------
 
 // POST route for EmpCreatePostPage.js below
 
