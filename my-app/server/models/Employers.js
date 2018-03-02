@@ -39,9 +39,4 @@ var EmployerSchema = new Schema(
   }
 );
 
-// User Passport.js for Password login
-var Employer = mongoose.model('Employer', EmployerSchema );
-
-module.exports = {
-  Employer
-}
+module.exports = EmployerSchema;

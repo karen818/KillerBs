@@ -1,20 +1,24 @@
+// import { ObjectId } from '../../../../../Library/Caches/typescript/2.6/node_modules/@types/bson';
+
 var mongoose = require('mongoose');
 
-var Job = mongoose.model('Job', {
-  // not sure what to do with _id just yet
+var Schema = mongoose.Schema;
+var ObjectId = Schema.ObjectId;
+
+var JobSchema = new Schema(
+{
   _id: {
     type: String,
     require: false
-  },    
+  },
   jobTitle: {
     type: String,
     required: true,
     trim: true
   },
-  companyName: {
-    type: String,
-    required: true,
-    trim: true
+  companyId: {
+    type: ObjectId,
+    required: true
   },
   jobDescription: {
     type: String,
@@ -25,13 +29,13 @@ var Job = mongoose.model('Job', {
     type: [String]
   },
   time: {
-    type : Date,
+    type: Date,
     default: Date.now
   },
   location: {
     type: String,
     required: true,
-    trim: true 
+    trim: true
   },
   url: {
     type: String,
@@ -40,6 +44,4 @@ var Job = mongoose.model('Job', {
   }
 });
 
-module.exports = {
-  Job
-}
+module.exports = JobSchema;
