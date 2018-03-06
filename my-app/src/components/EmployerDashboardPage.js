@@ -7,6 +7,7 @@ import EmployerHeader from './EmployerHeader';
 import { Link } from 'react-router-dom';
 
 
+
 import FontIcon from 'material-ui/FontIcon';
 import IconLocationOn from 'material-ui/svg-icons/communication/location-on';
 
@@ -83,7 +84,6 @@ export default class EmployerDashboardPage extends React.Component {
               style={style} 
             />
             {/* below styling may eventually be overwritten in a css file */}
-            <textarea>this is where links for jobs employer has posted will be populated</textarea>
           </CardText>
           <CardText expandable={true}>
             <SearchBar
