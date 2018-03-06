@@ -7,7 +7,7 @@ const EmployerSchema = require('./models/Employers');
 const JobSchema = require('./models/Jobs');
 const { Student } = require('./models/Students');
 const mongoose = require('mongoose');
-const ObjectId = mongoose.Types.ObjectId;
+const ObjectID = require('mongodb').ObjectID;
 const port = process.env.PORT || 3001;
 const app = express();
 
@@ -143,7 +143,7 @@ app.post('/job', (req, res) => {
   Job.create(
     {
       jobTitle: req.body.jobTitle,
-      companyId: req.body.companyId,
+      companyId: ObjectID(req.body.companyId),
       jobDescription: req.body.jobDescription,
       skills: req.body.skills,
       url: req.body.url,
@@ -161,7 +161,20 @@ app.post('/job', (req, res) => {
 
 // POST route for EmpCreatePostPage.js above
 
+// GET route for EmpListJobs.js
 
+app.get('/job', (req, res) => {
+  var {limit, companyid} = req.query;
+  Job.find({
+    companyId: companyid
+  }).
+  limit(limit).
+  sort({ timePosted: -1 }).  
+  exec((data)=>{
+    console.log('Jobs returned for ', companyid, JSON.stringify(data, null, 4))
+    return data
+  });
+})
 
 // below is unused so far to line 123
 

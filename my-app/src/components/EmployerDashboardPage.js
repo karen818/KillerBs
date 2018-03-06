@@ -7,7 +7,6 @@ import EmployerHeader from './EmployerHeader';
 import { Link } from 'react-router-dom';
 
 
-
 import FontIcon from 'material-ui/FontIcon';
 import IconLocationOn from 'material-ui/svg-icons/communication/location-on';
 
@@ -15,6 +14,8 @@ import Avatar from 'material-ui/Avatar';
 import FileFolder from 'material-ui/svg-icons/file/folder';
 
 import SearchBar from 'material-ui-search-bar';
+
+import EmpListJobs from './EmpListJobs';
 
 const dashIcon = <FontIcon className="material-icons" >dashboard</FontIcon>;
 
@@ -84,6 +85,9 @@ export default class EmployerDashboardPage extends React.Component {
               style={style} 
             />
             {/* below styling may eventually be overwritten in a css file */}
+
+            <EmpListJobs />
+
           </CardText>
           <CardText expandable={true}>
             <SearchBar

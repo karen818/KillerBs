@@ -1,17 +1,22 @@
 var mongoose = require('mongoose');
 
 var Schema = mongoose.Schema;
+var ObjectId = Schema.Types.ObjectId;
 
 var JobSchema = new Schema(
 {
+  _id: {
+    type: String,
+    required: false
+  },
   jobTitle: {
     type: String,
     required: true,
     trim: true
   },
   companyId: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Employer'
+    type: ObjectId,
+    required: true
   },
   jobDescription: {
     type: String,
@@ -21,7 +26,7 @@ var JobSchema = new Schema(
   skills: {
     type: [String]
   },
-  time: {
+  timePosted: {
     type: Date,
     default: Date.now
   },

@@ -29,3 +29,15 @@ export const submitCreateJob = (data) => {
   }).catch(err => err);
 }; 
 
+export const getJobs = (companyid) => {
+  return fetch(`http://localhost:3001/job?companyid=${companyid}&limit=20`, {
+    method: 'GET',
+    mode: 'CORS',
+    headers: {
+      'Accept': 'application/json'
+    }
+  }).then(res => {
+    return res;
+  }).catch(err => {console.log('Error: ', err)});
+}; 
+
