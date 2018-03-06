@@ -1,20 +1,22 @@
 var mongoose = require('mongoose');
 
-var Job = mongoose.model('Job', {
-  // not sure what to do with _id just yet
+var Schema = mongoose.Schema;
+var ObjectId = Schema.Types.ObjectId;
+
+var JobSchema = new Schema(
+{
   _id: {
     type: String,
-    require: false
-  },    
+    required: false
+  },
   jobTitle: {
     type: String,
     required: true,
     trim: true
   },
-  companyName: {
-    type: String,
-    required: true,
-    trim: true
+  companyId: {
+    type: ObjectId,
+    required: true
   },
   jobDescription: {
     type: String,
@@ -24,14 +26,14 @@ var Job = mongoose.model('Job', {
   skills: {
     type: [String]
   },
-  time: {
-    type : Date,
+  timePosted: {
+    type: Date,
     default: Date.now
   },
   location: {
     type: String,
     required: true,
-    trim: true 
+    trim: true
   },
   url: {
     type: String,
@@ -40,6 +42,4 @@ var Job = mongoose.model('Job', {
   }
 });
 
-module.exports = {
-  Job
-}
+module.exports = JobSchema;

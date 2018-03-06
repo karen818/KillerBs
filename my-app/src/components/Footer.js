@@ -8,6 +8,8 @@ const helpIcon = <FontIcon className="material-icons" >help</FontIcon>;
 const contactIcon = <FontIcon className="material-icons">mail_outline</FontIcon>;
 const copyrightIcon = <FontIcon className="material-icons">copyright</FontIcon>
 
+
+
 /**
  * A simple example of `BottomNavigation`, with three labels and icons
  * provided. The selected `BottomNavigationItem` is determined by application
@@ -22,7 +24,7 @@ class Footer extends Component {
 
   render() {
     return (
-      <Paper zDepth={1} className="footer-bottom">
+      <Paper zDepth={1} className="Footer">
         <BottomNavigation>
           <BottomNavigationItem
             label="Help"

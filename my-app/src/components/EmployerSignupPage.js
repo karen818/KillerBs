@@ -7,6 +7,10 @@ import ContentAdd from 'material-ui/svg-icons/content/add';
 import EmployerHeader from './EmployerHeader';
 import { Link } from 'react-router-dom';
 
+import { submitSignup } from '../actions/employerActions';
+
+// import axios from 'axios';
+
 const style = {
   margin: 12,
 };
@@ -23,58 +27,15 @@ class EmployerSignupPage extends React.Component {
       retypePassword: '',
       url: ''
     };
-
-    this.handleSubmit = this.handleSubmit.bind(this);
-
-    this.handleFirstNameChange = this.handleFirstNameChange.bind(this);
-    this.handleLastNameChange = this.handleLastNameChange.bind(this);
-    this.handleCompanyNameChange = this.handleCompanyNameChange.bind(this);
-    this.handleEmailChange = this.handleEmailChange.bind(this);
-    this.handlePasswordChange = this.handlePasswordChange.bind(this);
-    this.handleRetypePasswordChange = this.handleRetypePasswordChange.bind(this);
-    this.handleUrlChange = this.handleUrlChange.bind(this);
-
   }
 
-  handleSubmit(event) {
-    alert('EmployerSignupPage --> '
-      + this.state.firstName + ' | '
-      + this.state.lastName + ' | '
-      + this.state.companyName + ' | '
-      + this.state.email + ' | '
-      + this.state.password + ' | '
-      + this.state.retypePassword + ' | ' 
-      + this.state.url + '.'
-    );
+  handleChange = (event) => {
+    this.setState({ [event.target.name]: event.target.value });
+  };
+
+  handleSubmit = (event) => {
     event.preventDefault();
-  }
-
-  handleFirstNameChange(event) {
-    this.setState({firstName: event.target.value});
-  }
-
-  handleLastNameChange(event) {
-    this.setState({lastName: event.target.value});
-  }
-
-  handleCompanyNameChange(event) {
-    this.setState({companyName: event.target.value});
-  }
-
-  handleEmailChange(event) {
-    this.setState({email: event.target.value});
-  }
-
-  handlePasswordChange(event) {
-    this.setState({password: event.target.value});
-  }
-
-  handleRetypePasswordChange(event) {
-    this.setState({retypePassword: event.target.value});
-  }
-
-  handleUrlChange(event) {
-    this.setState({url: event.target.value});
+    submitSignup(this.state);
   }
 
   render() {
@@ -90,7 +51,7 @@ class EmployerSignupPage extends React.Component {
           </FloatingActionButton>
         </p>
 
-        <form onSubmit={this.handleSubmit}>
+        <form  onSubmit={this.handleSubmit}>
         
         <p>
           <TextField
@@ -98,8 +59,8 @@ class EmployerSignupPage extends React.Component {
             type='text'
             floatingLabelText='Company name'
             hintText='...type your company name'
-            value={this.setState.companyName}
-            onChange={this.handleCompanyNameChange}            
+            value={this.state.companyName}
+            onChange={this.handleChange}          
           />
         </p>
 
@@ -109,8 +70,8 @@ class EmployerSignupPage extends React.Component {
             type='text'
             floatingLabelText='First name'
             hintText='...type your first name'
-            value={this.setState.firstName}
-            onChange={this.handleFirstNameChange}            
+            value={this.state.firstName}
+            onChange={this.handleChange}            
           />
         </p>
 
@@ -120,30 +81,30 @@ class EmployerSignupPage extends React.Component {
             type='text'
             floatingLabelText='Last name'
             hintText='...type your last name'
-            value={this.setState.lastName}
-            onChange={this.handleLastNameChange}            
+            value={this.state.lastName}
+            onChange={this.handleChange}            
           />
         </p>
         
         <p>
           <TextField
             name='email'
-            type='text'
+            type='email'
             floatingLabelText='Email'
             hintText='...type your ACC email address'
-            value={this.setState.email}
-            onChange={this.handleEmailChange}            
+            value={this.state.email}
+            onChange={this.handleChange}            
           />
         </p>
 
         <p>
           <TextField
             name='password'
-            type='text'
+            type='password'
             floatingLabelText='Password'
             hintText='...create a password'
-            value={this.setState.password}
-            onChange={this.handlePasswordChange}            
+            value={this.state.password}
+            onChange={this.handleChange}            
           />
         </p>
 
@@ -151,12 +112,12 @@ class EmployerSignupPage extends React.Component {
           <TextField
             // updated this textfield to match password above 
             // this field is not saving data, only validating against password
-            name='password'
-            type='text'
+            name='retypePassword'
+            type='password'
             floatingLabelText='Retype password'
             hintText='...re-enter password for verification'
-            value={this.setState.password}
-            onChange={this.handlePasswordChange}
+            value={this.state.retypePassword}
+            onChange={this.handleChange}
           />
         </p>
 
@@ -166,8 +127,8 @@ class EmployerSignupPage extends React.Component {
             type='text'
             floatingLabelText='Company URL'
             hintText='...enter company URL'
-            value={this.setState.url}
-            onChange={this.handleUrlChange}            
+            value={this.state.url}
+            onChange={this.handleChange}  
           />
         </p>
 
@@ -178,7 +139,7 @@ class EmployerSignupPage extends React.Component {
           type="submit"
         />
         <RaisedButton
-          containerElement={<Link to="/employer-dash" />}
+          containerElement={<Link to="/" />}
           label="Cancel"
           secondary={true}
           style={style}

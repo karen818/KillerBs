@@ -27,6 +27,9 @@ var Student = mongoose.model('Student', {
   },
   fieldOfStudy: {
     type: String
+  },
+  skills: {
+    type: String
   }
 });
 

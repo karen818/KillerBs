@@ -24,6 +24,7 @@ import StudentViewPost from './components/StudentViewPost';
 
 class App extends Component {
   render() {
+
     return (
       <div className="App">
 
@@ -31,20 +32,24 @@ class App extends Component {
 
           <Switch>
             <Route exact path="/" component={LoginPage} />
-            <Route path="/student-dash" component={DashStudentPage} />
-            <Route path="/student-signup" component={StudentSignupPage} />
-            <Route path="/edit-student-acct" component={EditStudentAcctPage} />
-            <Route path="/employer-dash" component={EmployerDashboardPage} />
-            <Route path="/employer-signup" component={EmployerSignupPage} />
-            <Route path="/edit-employer-acct" component={EditEmployerAcctPage} />
-            <Route path="/job-posted" component={JobPostedPage} />
-            <Route path="/view-post" component={StudentViewPost} />
-            <Route path="/edit-job-post" component={EmpEditPostPage} />
-            <Route path="/create-post" component={EmpCreatePostPage} />
+            <Route path="/student/dash" component={DashStudentPage} />
+            <Route path="/student/signup" component={StudentSignupPage} />
+            <Route path="/edit/student/acct" component={EditStudentAcctPage} />
+            <Route path="/employer/dash" component={EmployerDashboardPage} />
+            <Route path="/employer/signup" component={EmployerSignupPage} />
+            <Route path="/edit/employer/acct" component={EditEmployerAcctPage} />
+            <Route path="/job/posted" component={JobPostedPage} />
+            <Route path="/view/post" component={StudentViewPost} />
+            <Route path="/edit/job/post" component={EmpEditPostPage} />
+            <Route path="/create/post" component={EmpCreatePostPage} />
           </Switch>
-          <Footer />
+
+          {/* <Footer /> */}
+
+
 
         </MuiThemeProvider>
+        
       </div>
     );
   }

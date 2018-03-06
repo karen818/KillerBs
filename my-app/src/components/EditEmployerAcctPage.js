@@ -95,7 +95,7 @@ class EditEmployerAcctPage extends React.Component {
               name="firstName"
               hintText="First name"
               onChange={this.handleFirstNameUpdate}
-              value={this.setState.firstName}
+              value={this.state.firstName}
             />
           </p>
           <p>Last Name:
@@ -103,7 +103,7 @@ class EditEmployerAcctPage extends React.Component {
               name="lastName"
               hintText="Last name"
               onChange={this.handleLastNameUpdate}
-              value={this.setState.lastName}
+              value={this.state.lastName}
             />
           </p>
           <p>Company Name:
@@ -111,31 +111,34 @@ class EditEmployerAcctPage extends React.Component {
               name="companyName"
               hintText="Enter company name"
               onChange={this.handleCompanyNameUpdate}
-              value={this.setState.companyName}
+              value={this.state.companyName}
             />
           </p>
           <p>Email:
             <TextField
               name="email"
+              type="email"
               hintText="Must use ACC email"
               onChange={this.handleEmailUpdate}
-              value={this.setState.email}
+              value={this.state.email}
             />
           </p>
           <p>Password:
             <TextField
               name="password"
+              type="password"
               hintText="Password requirements go here"
               onChange={this.handlePasswordUpdate}
-              value={this.setState.password}
+              value={this.state.password}
             />
           </p>
           <p>Re-type password:
             <TextField
               name="retypePassword"
+              type="password"
               hintText="Re-enter password for veriication"
               onChange={this.handleRetypePasswordUpdate}
-              value={this.setState.retypePassword}
+              value={this.state.retypePassword}
             />
           </p>
           <p>URL: 
@@ -143,12 +146,12 @@ class EditEmployerAcctPage extends React.Component {
             name="url"
             hintText="Enter URL" 
             onChange={this.handleUrlUpdate} 
-            value={this.setState.url} 
+            value={this.state.url} 
           />
         </p>
 
           <RaisedButton
-            containerElement={<Link to="/employer-dash" />}
+            containerElement={<Link to="/employer/dash" />}
             label="Cancel"
             primary={true}
             style={style} 

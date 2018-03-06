@@ -43,7 +43,7 @@ class LoginPage extends React.Component {
   render() {
     return (
       <div>
-        <h1>Find A Job!</h1>
+        <h1>Internship</h1>
       
         <form onSubmit={this.handleSubmit}>
 
@@ -55,7 +55,7 @@ class LoginPage extends React.Component {
             style={style}
             hintText='...ACC email required'
             //value needs a closer look
-            value={this.setState.email}
+            value={this.state.email}
             onChange={this.handleEmailChange}
           />
         </p>
@@ -63,11 +63,11 @@ class LoginPage extends React.Component {
         <p>
           <TextField 
             name='password'
-            type='text'
+            type='password'
             floatingLabelText='Password'
             style={style}
             hintText='...enter password here'            
-            value={this.setState.password}
+            value={this.state.password}
             onChange={this.handlePasswordChange}
           />
         </p>
@@ -83,13 +83,13 @@ class LoginPage extends React.Component {
         <Divider />
         <h3>Sign up</h3>
         <RaisedButton 
-          containerElement={<Link to="/student-signup" />} 
+          containerElement={<Link to="/student/signup" />} 
           label="Student" 
           primary={true} 
           style={style} 
         />
         <RaisedButton 
-          containerElement={<Link to="/employer-signup" />} 
+          containerElement={<Link to="/employer/signup" />} 
           label="Employer" 
           primary={true} 
           style={style} 
