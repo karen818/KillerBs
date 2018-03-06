@@ -5,10 +5,13 @@ import EmployerHeader from './EmployerHeader';
 import { Link } from 'react-router-dom';
 import { submitCreateJob } from '../actions/employerActions';
 
+const employerId = "5a975d329bfa160783522cdf"; // TODO - REMOVE AFTER AUTHENTICATION!!! 
+
 class EmpCreatePostPage extends React.Component {
 	constructor(props) {
     super(props);
     this.state = {
+			_id: employerId,
       jobTitle: '',
       companyName: '',
       jobDescription: '',

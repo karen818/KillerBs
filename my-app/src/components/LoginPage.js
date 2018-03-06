@@ -43,7 +43,7 @@ class LoginPage extends React.Component {
   render() {
     return (
       <div>
-        <h1>Find A Job!</h1>
+        <h1>Internship</h1>
       
         <form onSubmit={this.handleSubmit}>
 

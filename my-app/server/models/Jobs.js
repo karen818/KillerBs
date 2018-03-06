@@ -1,24 +1,17 @@
-// import { ObjectId } from '../../../../../Library/Caches/typescript/2.6/node_modules/@types/bson';
-
 var mongoose = require('mongoose');
 
 var Schema = mongoose.Schema;
-var ObjectId = Schema.ObjectId;
 
 var JobSchema = new Schema(
 {
-  _id: {
-    type: String,
-    require: false
-  },
   jobTitle: {
     type: String,
     required: true,
     trim: true
   },
   companyId: {
-    type: ObjectId,
-    required: true
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Employer'
   },
   jobDescription: {
     type: String,
