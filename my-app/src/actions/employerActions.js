@@ -29,6 +29,9 @@ export const submitCreateJob = (data) => {
   }).catch(err => err);
 }; 
 
+
+//Commented out code is how Piyush set up the request URL with a dynamic string.
+
 export const getJobs = (companyid) => {
   return fetch(`http://localhost:3001/job?companyid=${companyid}&limit=20`, {
     method: 'GET',
@@ -40,4 +43,16 @@ export const getJobs = (companyid) => {
     return res;
   }).catch(err => {console.log('Error: ', err)});
 }; 
+
+// export const getJobs = (companyid) => {
+//   return fetch('http://localhost:3001/job', {
+//     method: 'GET',
+//     mode: 'CORS',
+//     headers: {
+//       'Accept': 'application/json'
+//     }
+//   }).then(res => {
+//     return res;
+//   }).catch(err => {console.log('Error: ', err)});
+// }; 
 

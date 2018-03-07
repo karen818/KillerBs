@@ -5,10 +5,6 @@ var ObjectId = Schema.Types.ObjectId;
 
 var JobSchema = new Schema(
 {
-  _id: {
-    type: String,
-    required: false
-  },
   jobTitle: {
     type: String,
     required: true,
