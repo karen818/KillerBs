@@ -13,6 +13,6 @@ export default class EmpJob extends React.Component {
 		</div>
 		)
 		
-}
+	}
 }
 

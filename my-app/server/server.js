@@ -171,7 +171,7 @@ app.get('/job', (req, res) => {
   limit(limit).
   sort({ timePosted: -1 }).  
   exec((data)=>{
-    console.log('Jobs returned for ', companyid, JSON.stringify(data, null, 4))
+    console.log('Jobs returned for ', companyid, JSON.stringify(data, null, 4));
     return data
   });
 })

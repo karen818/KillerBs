@@ -9,16 +9,17 @@ export default class EmpListJobs extends React.Component {
       companyId: '',
       jobs: []
 		}
+	}
 
-		componentDidMount(()=>{
-			this.getJobs()
+		componentDidMount(){
+			getJobs()
 				.then(data => {
 					this.setState({
 						jobs: data
 					});
-				})
-		})
-	}
+				});
+		};
+
 	render () {
 	return(
 		<div>
