@@ -1,7 +1,6 @@
 var mongoose = require('mongoose');
 
 var Schema = mongoose.Schema;
-var ObjectId = Schema.Types.ObjectId;
 
 var JobSchema = new Schema(
 {
@@ -11,8 +10,8 @@ var JobSchema = new Schema(
     trim: true
   },
   companyId: {
-    type: ObjectId,
-    required: true
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Employer'
   },
   jobDescription: {
     type: String,

@@ -7,7 +7,13 @@ const EmployerSchema = require('./models/Employers');
 const JobSchema = require('./models/Jobs');
 const { Student } = require('./models/Students');
 const mongoose = require('mongoose');
+
 const ObjectID = require('mongodb').ObjectID;
+
+// which to use?
+
+// const ObjectId = mongoose.Types.ObjectId; 
+
 const port = process.env.PORT || 3001;
 const app = express();
 
