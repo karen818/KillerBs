@@ -11,14 +11,14 @@ export default class EmpListJobs extends React.Component {
 		}
 	}
 
-		componentDidMount(){
-			getJobs()
-				.then(data => {
-					this.setState({
-						jobs: data
-					});
+	componentDidMount(){
+		getJobs()
+			.then(data => {
+				this.setState({
+					jobs: data
 				});
-		};
+			});
+	};
 
 	render () {
 	return(
