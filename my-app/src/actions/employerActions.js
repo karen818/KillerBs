@@ -39,8 +39,11 @@ export const getJobs = (companyid) => {
     headers: {
       'Accept': 'application/json'
     }
-  }).then(res => {
-    return res;
+  })
+  .then(response => response.json())
+  .then(data => {
+    // console.log(data);
+    return data;
   }).catch(err => {console.log('Error: ', err)});
 }; 
 

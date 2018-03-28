@@ -84,8 +84,7 @@ app.get('/employer', (req, res) => {
   Employer.find((err, employers) => {
     if (err)
       res.send(err);
-
-    res.json(employers);
+      res.json(employers);
   });
 });
 
@@ -170,15 +169,17 @@ app.post('/job', (req, res) => {
 // GET route for EmpListJobs.js
 
 app.get('/job', (req, res) => {
-  var {limit, companyid} = req.query;
-  Job.find({
-    companyId: companyid
-  }).
-  limit(limit).
+  // var {limit, companyid} = req.query;
+  // var { limit } = req.query;
+  // var  companyid  = req.query;
+  var companyid = "5a975d329bfa160783522cdf" // not sure what to do with this stuff
+  Job.find({companyId: companyid}).
+  limit(20).
   sort({ timePosted: -1 }).  
-  exec((data)=>{
-    console.log('Jobs returned for ', companyid, JSON.stringify(data, null, 4));
-    return data
+  exec((err, data)=>{
+    if(err) return (err);
+    console.log('Jobs returned for ', data, JSON.stringify(data, null, 4));
+    res.json(data);
   });
 })
 
@@ -199,7 +200,6 @@ app.post('/login', (req, res) => {
       handleError(res, err.message, "Failed to create new contact.");
     } else {
       res.status(201).json(doc.ops[0]);
-
     }
   });
 });

@@ -47,7 +47,7 @@ class LoginPage extends React.Component {
       
         <form onSubmit={this.handleSubmit}>
 
-        <p>
+        <div>
           <TextField 
             name='email'
             type='text'
@@ -58,9 +58,9 @@ class LoginPage extends React.Component {
             value={this.state.email}
             onChange={this.handleEmailChange}
           />
-        </p>
+        </div>
         
-        <p>
+        <div>
           <TextField 
             name='password'
             type='password'
@@ -70,7 +70,7 @@ class LoginPage extends React.Component {
             value={this.state.password}
             onChange={this.handlePasswordChange}
           />
-        </p>
+        </div>
         
         <a href="#">forgot password?</a>
         <br />
