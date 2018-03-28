@@ -183,6 +183,38 @@ app.get('/job', (req, res) => {
   });
 })
 
+// PUT route for updating job posts
+
+app.put('/job/:job_id', (req, res) => {
+  Job.findById(req.params.job_id, (err, job) => {
+    job.jobTitle = req.body.jobTitle;
+    job.jobDescription = req.body.jobDescription;
+    job.skills = req.body.skills;
+    job.timePosted = req.body.timePosted;
+    job.location = req.body.location;
+    job.url = req.body.url;
+
+    job.save((err) => {
+      if (err)
+        res.send(err);
+
+      res.json({ message: 'Job post information updated.' });
+    });
+  });
+});
+
+// DELETE route for deleting a job post
+
+app.delete('/job/:job_id', (req, res) => {
+  Job.remove({
+    _id: req.params.job_id
+  }, (err, job) => {
+    if (err)
+      res.send(err);
+    res.json({ message: 'Job post successfully deleted.'})
+  })
+});
+
 // below is unused so far to line 123
 
 app.get('/login', (req, res) => { });
